@@ -1,0 +1,15 @@
+[[crypto_scalar_policies]]
+=== Policies
+
+In creating this proposal, we tried to adhere to the following
+policies:
+
+* Provide a RISC-V BFloat16 definition that makes sense for how we expect
+these operands to be used in real applications.
+* Provide the basic instructions that allow implementations to leverage the
+benefits of the BFloat16 format +
+** reduced storage space - A BFloat16 operand consumes half the space of an FP32 operand +
+** higher effective storage bandwidth - Two BFloat16 operands can be transferred at the same rate as one FP32 +
+** higher computational throughput - Two BFloat16 multiplies can be performed with less logic than one FP32 +
+* Provide consistency with other approaches when this doesn't interfere with
+the above 

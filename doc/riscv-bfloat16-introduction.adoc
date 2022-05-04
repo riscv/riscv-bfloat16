@@ -1,0 +1,45 @@
+[[BFloat16_introduction]]
+== Introduction
+
+When FP16 (officially called binary16) was first introduced by the IEEE-754 standard,
+it was just an interchange format. It was intended as a space/bandwidth efficient
+encoding that would be used to transfer information. This is in line with the Zfhmin
+proposed extension.
+
+However, there were some applications (notably graphics) that found that the smaller
+precision and dynamic range was sufficient for their space. So, FP16 started to see
+some widespread adoption as an arithmetic format. This is in line with the Zfh
+proposed extension.
+
+While it was not the intention of '754 to have FP16 be an arithmetic format, it is
+supported by the standard. Even though the '754 committee recognized that FP16 was
+gaining popularity, the committee decided to hold off on making it a basic format
+in the 2019 release. This means that a '754 compliant implementation of binary
+floating point, which needs to support at least one basic format, cannot support
+only FP16 - it needs to support at least one of binary32, binary64, and binary128.
+
+Experts working in machine learning noticed that FP16 was a much more compact way of
+storing operands and often provided sufficient precision for them. However, they also
+found that intermediate values were much better when accumulated into a higher precision.
+The final computations were then typically converted back into the more compact FP16
+encoding.  This approach has become very common in inferencing where the weights and
+activations are stored in FP16 encodings.  There was the added benefit that smaller
+multipliers could be created for the FP16's smaller number of significant bits. At this
+point, widening multiply-accumulate instructions became much more common. Also, more
+complicated dot product instructions started to show up including those that stored two
+FP16 numbers in a 32-bit register, multiplied these by another pair of FP16 numbers in
+another register, added these two products to an FP32 accumulate value in a 3rd register
+and returned an FP32 result. 
+
+Experts working in machine learning at Google who continued to work with FP32 values
+noted that the least significant 16 bits of their significands were not always needed
+for good results, even in training. They proposed a truncated version of FP32, which was
+the 16 most significant bits of the FP32 encoding. This format was named BFloat16
+(or BF16). The B in BFloat16, stands for Brain. Not only did they find that the number of
+significant bits in BF16 tended to be sufficient for their work (despite being fewer than
+in FP16), but it was very easy for them to reuse their existing data; FP32 numbers could
+be readily rounded to BF16 with a minimal amount of work. Furthermore, the even smaller
+number of the BF16 significant bits enabled even smaller multipliers to be built. Similar
+to FP16, BF16 multiply-accumulate widening and dot-product instructions started to
+proliferate.
+

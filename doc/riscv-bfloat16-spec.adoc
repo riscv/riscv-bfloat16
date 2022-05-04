@@ -1,0 +1,152 @@
+[[riscv-doc-template]]
+= RISC-V BFloat16 Extension
+:description: The BFloat16 format and instruction extensions for the RISC-V ISA.
+:company: RISC-V.org
+:revdate:  8 February, 2022
+:revnumber: v0.0.1
+:revremark: Draft
+:url-riscv: http://riscv.org
+:doctype: book
+//:doctype: report
+:preface-title: Preamble
+:colophon:
+:appendix-caption: Appendix
+:imagesdir: images
+:title-logo-image: image:risc-v_logo.png[pdfwidth=3.25in,align=center]
+//:page-background-image: image:draft.svg[opacity=20%]
+//:title-page-background-image: none
+//:back-cover-image: image:circuit.png[opacity=25%]
+// Settings:
+:experimental:
+:reproducible:
+// needs to be changed? bug discussion started
+:WaveDromEditorApp: wavedrom-cli
+:imagesoutdir: images
+:icons: font
+:lang: en
+:listing-caption: Listing
+:sectnums:
+:toc: left
+:toclevels: 4
+:source-highlighter: pygments
+ifdef::backend-pdf[]
+:source-highlighter: coderay
+endif::[]
+:data-uri:
+:hide-uri-scheme:
+:stem: latexmath
+:footnote:
+:xrefstyle: short
+:bibtex-file: ../riscv-bfloat16-spec.bib
+:bibtex-order: alphabetical
+:bibtex-style: ieee
+
+//:This is the preamble.
+
+[colophon]
+= Colophon
+
+This document describes the BFloat16 format and instruction extensions to the 
+RISC-V Instruction Set Architecture.
+
+This document is in the link:http://riscv.org/spec-state[Discussion State].
+This specification is in the early stages. Comments and proposals
+are encouraged.
+For more information, see link:http://riscv.org/spec-state[here].
+
+[NOTE]
+.Copyright and licensure:
+This work is licensed under a
+link:http://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International License]
+
+[NOTE]
+.Document Version Information:
+====
+include::git-commit.adoc[]
+
+See link:https://github.com/riscv/riscv-alt-fp[github.com/riscv/riscv-alt-fp]
+for more information.
+====
+
+[acknowledgments]
+== Acknowledgments
+
+Contributors to all versions of the specification (in alphabetical order)
+include:
+[square]
+* GouYue +
+* link:mailto:kad@rivosinc.com[Ken Dockser] (Editor) +
+* Nick Knight +
+* _Your name here_ +
+
+We will be very grateful to the huge number of other people who will
+have helped to improve this specification through their comments, reviews,
+feedback and questions.
+
+// ------------------------------------------------------------
+
+include::riscv-bfloat16-introduction.adoc[]
+include::riscv-bfloat16-audience.adoc[]
+include::riscv-bfloat16-format.adoc[]
+// include::riscv-bfloat16-sail-specifications.adoc[]
+// include::riscv-bfloat16-policies.adoc[]
+
+// ------------------------------------------------------------
+
+[[bfloat16_extensions]]
+== Extensions Overview
+
+The group of extensions introduced by the BFloat16 Instruction Set
+Extension is listed here.
+
+Detection of individual BFloat16 extensions uses the
+unified software-based RISC-V discovery method.
+
+[NOTE]
+====
+At the time of writing, these discovery mechanisms are still a work in
+progress.
+====
+
+.A note on extension rationale
+[NOTE, caption="SH"]
+====
+BFloat16 instructions are separated into different
+functional groups because not all implementations will require all
+of the functionality.
+
+====
+
+// include::riscv-bfloat16-zfbmin.adoc[]
+
+
+=== `Zfbmin` - BFloat16 minimal 
+
+This extension provides the minimal support required for the BFloat16
+format. It enables BFloat16 as an interchange format whereby it
+can be used to load, store, and convert BFloat16 values. 
+<<riscv_bfloat16_zfbmin>>.
+
+// ------------------------------------------------------------
+
+[[bfloat16_insns, reftext="BFloat16 Instructions"]]
+== Instructions
+// include::insns/bf16convert.adoc[]
+// <<<
+// include::insns/bf16fma.adoc[]
+// <<<
+
+
+[[bibliography]]
+== Bibliography
+
+bibliography::
+
+// ../riscv-bfloat16-spec.bib[ieee]
+https://https://ieeexplore.ieee.org/document/8766229[754-2019 - IEEE Standard for Floating-Point Arithmetic] +
+https://ieeexplore.ieee.org/document/4610935[754-2008 - IEEE Standard for Floating-Point Arithmetic]
+
+// include::riscv-bfloat16-appx-rationale.adoc[]
+// include::riscv-bfloat16-appx-materials.adoc[]
+// include::riscv-bfloat16-appx-sail.adoc[]
+
