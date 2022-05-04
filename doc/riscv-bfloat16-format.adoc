@@ -1,0 +1,82 @@
+[[bfloat16_format]]
+== BFloat16 Operand Format
+
+BFloat16 bits::
+[wavedrom, , svg]
+....
+{reg:[
+{bits: 1, name: 'S'},
+{bits: 5, name: 'expo'},
+{bits: 10, name: 'frac'},
+]}
+....
+
+IEEE Compliance: While BFloat16 (BF16) is not an IEEE-754 _standard_ format, it is a valid floating point format as defined by the standard. There are three parameters that specify a format: radix (b), number of digits in the significand (p), and maximum exponent (emax).
+For BF16 these values are:
+
+[%autowidth]
+.BFloat16 parameters
+|===
+|radix (b)|2
+|significand (p)|8
+|emax|127
+|===
+
+
+.Obligatory Floating Point Format Table
+[cols = "1,1,1,1,1,1,1,1"]
+|===
+|Format|Sign Bits|Expo Bits|fraction bits|padded 0s|encoding bits|expo max/bias|expo min
+
+|FP16    |1| 5|10| 0|16|  15| -14
+|BFloat16|1| 8| 7| 0|16| 127|-126
+|TF32    |1| 8|10|13|32| 127|-126
+|FP32    |1| 8|23| 0|32| 127|-126
+|FP64    |1|11|52| 0|64|1023|-1022
+|FP128   |1|15|112|0|128|16,383|-16,382
+|===
+
+== BFloat16 behaviors
+
+=== Subnormal Numbers:
+Floating-point values that are too small to be represented as normal numbers, but can still be represented by
+using the format's smallest exponent with a zero integer bit and one or more leading 0s --- and one or
+more 1s --- in the trailing fractional bits are called subnormal numbers. Basically, the idea is there is
+a trade off of precision to support _gradual underflow_.
+
+In RISC-V instructions operating on BFloat16, it is generally intended that all subnormal BFloat16 inputs
+are treated as zero and subnormal outputs are flushed to zero. The sign of the original value is retained. 
+However, it does not necessarily make sense for all BF16 instructions to follow this behavior. For
+example, there is little value in such behavior when converting between FP32 and BF16. Therefore, individual
+instructions can specify when they deviate from this behavior.
+
+While '754 doesn't support treating/flushing subnormals, many architectures have adopted such behavior
+as a reasonable simplification for certain domains.
+Furthermore, since BFloat16 has the same exponent range as FP32, supporting subnormals is  expected to
+add little value.
+
+ 
+===  Infinities:
+Infinities are used to represent values that are too large to be represented by the target format. These are usually produced as a result of overflows (depending on the rounding mode), but can also be provided as inputs. Infinities have a sign associated with them: there are positive infinities and negative infinities.
+
+
+Infinities are important for keeping meaningless results from being operated upon.
+
+=== NaNs
+
+NaN stands for Not a Number. These are provided as the result of an operation when it cannot be represented
+as a number or infinity. For example, performing the square root of -1 will result in a NaN because
+there is no real number that can represent the result. NaNs can also be used as inputs.
+
+There are two types of NaNs: signalling and quiet. Signalling NaNs are provided as input data since no computational instruction will ever produce this kind of a NaN. Operating on a Signalling NaN will produce an invalid operation exception. Operating on a Quiet NaN usually does not cause an exception.
+
+NaNs include a sign bit, but the bit has no meaning.
+
+NaNs are important for keeping meaningless results from being operated upon. It is best to retain them. As IEEE allows, operations should return the canonical NaN rather than be required to propagate the payload.
+ 
+===  Rounding Modes:
+In general, the default IEEE rounding mode (round to nearest, ties to even) works for arithmetic cases. There are some special cases where a particular instruction benefits from a different rounding mode (e.g., convert to integer, widening multiply-accumulate) - we can address this on those specific instructions.
+ 
+=== Handling exceptions
+Default exception handling, as defined by IEEE, is a simple and effective approach to producing results in exceptional cases. For the coder to be able to see what has happened, and take further action if needed, the BFloat16 instructions need to set floating-point exception flags the same way as all other floating-point instructions in RISC-V. 
+
