@@ -11,8 +11,8 @@
 :preface-title: Preamble
 :colophon:
 :appendix-caption: Appendix
-:imagesdir: images
-:title-logo-image: image:risc-v_logo.png[pdfwidth=3.25in,align=center]
+:imagesdir: ../images
+:title-logo-image: image:risc-v_logo.svg[pdfwidth=3.25in,align=center]
 //:page-background-image: image:draft.svg[opacity=20%]
 //:title-page-background-image: none
 //:back-cover-image: image:circuit.png[opacity=25%]
@@ -37,7 +37,7 @@ endif::[]
 :stem: latexmath
 :footnote:
 :xrefstyle: short
-:bibtex-file: ../riscv-bfloat16-spec.bib
+:bibtex-file: riscv-bfloat16-spec.bib
 :bibtex-order: alphabetical
 :bibtex-style: ieee
 
@@ -62,7 +62,7 @@ link:http://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.
 [NOTE]
 .Document Version Information:
 ====
-include::git-commit.adoc[]
+//include::git-commit.adoc[]
 
 See link:https://github.com/riscv/riscv-alt-fp[github.com/riscv/riscv-alt-fp]
 for more information.
@@ -137,14 +137,7 @@ can be used to load, store, and convert BFloat16 values.
 // <<<
 
 
-[[bibliography]]
-== Bibliography
-
-bibliography::
-
-// ../riscv-bfloat16-spec.bib[ieee]
-https://https://ieeexplore.ieee.org/document/8766229[754-2019 - IEEE Standard for Floating-Point Arithmetic] +
-https://ieeexplore.ieee.org/document/4610935[754-2008 - IEEE Standard for Floating-Point Arithmetic]
+include::../bibliography.adoc[ieee]
 
 // include::riscv-bfloat16-appx-rationale.adoc[]
 // include::riscv-bfloat16-appx-materials.adoc[]
