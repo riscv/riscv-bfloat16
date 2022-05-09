@@ -117,15 +117,29 @@ of the functionality.
 
 ====
 
-// include::riscv-bfloat16-zfbmin.adoc[]
+// include::riscv-bfloat16-zfbfmin.adoc[]
 
 
-=== `Zfbmin` - BFloat16 minimal 
+=== `Zfbfmin` - Scalar BF16 Converts
 
-This extension provides the minimal support required for the BFloat16
+This extension provides the minimal required for scalar support of the BFloat16
 format. It enables BFloat16 as an interchange format whereby it
-can be used to load, store, and convert BFloat16 values. 
-<<riscv_bfloat16_zfbmin>>.
+can be used to convert BFloat16 values. 
+<<riscv_bfloat16_zfbfmin>>.
+ 
+
+=== `Zvfbfmin` - Vector BF16 Converts
+
+This extension provides the minimal required vector support of the BFloat16
+format. It enables BFloat16 as an interchange format whereby it
+can be used to convert BFloat16 values. 
+<<riscv_bfloat16_zvfbfmin>>.
+
+=== `Zvfbfwma` - Vector BF16 widening muladd
+
+This extension provides the vector support of the BFloat16
+format. It provides widening BF16 muladd instructions that produce FP32 results. 
+<<riscv_bfloat16_zvfbfmin>>.
 
 // ------------------------------------------------------------
 
