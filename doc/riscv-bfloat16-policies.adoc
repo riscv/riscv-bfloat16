@@ -1,4 +1,4 @@
-[[crypto_scalar_policies]]
+[[bfloat16_policies]]
 === Policies
 
 In creating this proposal, we tried to adhere to the following

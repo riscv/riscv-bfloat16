@@ -5,9 +5,9 @@ BFloat16 bits::
 [wavedrom, , svg]
 ....
 {reg:[
+{bits: 7, name: 'frac'},
+{bits: 8, name: 'expo'},
 {bits: 1, name: 'S'},
-{bits: 5, name: 'expo'},
-{bits: 10, name: 'frac'},
 ]}
 ....
 
