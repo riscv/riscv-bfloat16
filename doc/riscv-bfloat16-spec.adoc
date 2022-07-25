@@ -2,7 +2,7 @@
 = RISC-V BFloat16 Extension
 :description: The BFloat16 format and instruction extensions for the RISC-V ISA.
 :company: RISC-V.org
-:revdate:  8 February, 2022
+:revdate:  10 May, 2022
 :revnumber: v0.0.1
 :revremark: Draft
 :url-riscv: http://riscv.org
