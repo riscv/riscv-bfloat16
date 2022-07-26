@@ -73,9 +73,31 @@ There are two types of NaNs: signalling and quiet. Signalling NaNs are provided 
 NaNs include a sign bit, but the bit has no meaning.
 
 NaNs are important for keeping meaningless results from being operated upon. It is best to retain them. As IEEE allows, operations should return the canonical NaN rather than be required to propagate the payload.
- 
+
+=== Scalar NaN Boxing
+
+RISC-V applies NaN boxing to scalar results and checks for NaN boxing when a floating-point operation --- even a vector-scalar operation --- consumes a value from a scalar floating-point register. If such a value is not NaN Boxed, it is treated as if it were the canonical QNaN.
+
+NaN boxing is nothing more than putting the smaller encoding in the least significant bits of a register and setting all of the more significant bits to “1”. This matches the encoding of a Quiet NaN (although not the canonical QNaN) in the larger precision.
+
+Nan-boxing never affects the value of the operand itself, it just changes the bits of the format that is larger than the operand.
+
+
 ===  Rounding Modes:
-In general, the default IEEE rounding mode (round to nearest, ties to even) works for arithmetic cases. There are some special cases where a particular instruction benefits from a different rounding mode (e.g., convert to integer, widening multiply-accumulate) - we can address this on those specific instructions.
+In general, the default IEEE rounding mode (round to nearest, ties to even) is used for arithmetic.
+
+BFloat16 supports all 5 RISC-V Floating-point rounding modes: 
+
+.RISC-V Floating Point Rounding Modes
+[cols = "1,1,1"]
+|===
+|Rounding Mode | Mnemonic | Meaning
+|000 | RNE | Round to Nearest, ties to Even
+|001 | RTZ | Round towards Zero
+|010 | RDN | Round Down (towards −∞)
+|011 | RUP | Round Up (towards +∞)
+|100 | RMM | Round to Nearest, ties to Max Magnitude
+|===
  
 === Handling exceptions
 Default exception handling, as defined by IEEE, is a simple and effective approach to producing results in exceptional cases. For the coder to be able to see what has happened, and take further action if needed, the BFloat16 instructions need to set floating-point exception flags the same way as all other floating-point instructions in RISC-V. 
