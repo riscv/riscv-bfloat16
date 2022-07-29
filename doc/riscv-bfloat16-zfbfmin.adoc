@@ -1,0 +1,24 @@
+[[zfbmin,Zfbmin]]
+=== `Zfbfmin` - Scalar BF16 Converts
+
+This extension provides the minimal required for scalar support of the BFloat16
+format. It enables BFloat16 as an interchange format whereby it
+can be used to convert between BFloat16 values and FP32 values. 
+
+[%header,cols="^2,4"]
+|===
+|Mnemonic
+|Instruction
+
+|FCVTBF16.S    | Scalar convert from FP32 to BF16
+|FCVTS.BF16    | Scalar convert from BF16 to FP32
+
+|===
+
+
+Scalar floating-point instructions for converting between BF16 and FP32
+
+Two instructions are provided to convert between BF16 and FP32.
+
+Since BF16 has the same exponent encoding as FP32, the only exception that can occur on a conversion from BF16 to FP32 is invalid. This will only be signaled if the BF16 input is a signalling NaN.
+

@@ -1,0 +1,5 @@
+[[zvfbfwma,Zvfbfwma]]
+=== `Zvfbfwma` - Vector BF16 widening mul-add
+
+This extension provides the vector support of the BFloat16
+format. It provides widening BF16 muladd instructions that produce FP32 results. 

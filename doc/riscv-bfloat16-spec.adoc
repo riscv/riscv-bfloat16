@@ -117,36 +117,25 @@ of the functionality.
 
 ====
 
-// include::riscv-bfloat16-zfbfmin.adoc[]
+
+The BFloat16 extensions depend on the half-precision floating-point extensions (Zfh and Zfhmin), which in turn rely on the single-precision floating-point extension (F).
 
 
-=== `Zfbfmin` - Scalar BF16 Converts
+The Bfloat16 extensions do not add any new load or store instructions, as the FLH and FSH 16-bit load and store instructions introduced by the half-precision extensions work just fine for Bfloat16 values.
 
-This extension provides the minimal required for scalar support of the BFloat16
-format. It enables BFloat16 as an interchange format whereby it
-can be used to convert BFloat16 values. 
-<<riscv_bfloat16_zfbfmin>>.
- 
 
-=== `Zvfbfmin` - Vector BF16 Converts
+This initial set of BFloat16 extensions provide very basic functionality including conversion between BFloat16 and single-precision values for scalar and vector, and widening multiply-add instructions that return a single-precision result.
 
-This extension provides the minimal required vector support of the BFloat16
-format. It enables BFloat16 as an interchange format whereby it
-can be used to convert BFloat16 values. 
-<<riscv_bfloat16_zvfbfmin>>.
-
-=== `Zvfbfwma` - Vector BF16 widening muladd
-
-This extension provides the vector support of the BFloat16
-format. It provides widening BF16 muladd instructions that produce FP32 results. 
-<<riscv_bfloat16_zvfbfmin>>.
+include::riscv-bfloat16-zfbfmin.adoc[]
+include::riscv-bfloat16-zvfbfmin.adoc[]
+include::riscv-bfloat16-zvfbfwma.adoc[]
 
 // ------------------------------------------------------------
 
 [[bfloat16_insns, reftext="BFloat16 Instructions"]]
 == Instructions
-// include::insns/bf16convert.adoc[]
-// <<<
+include::insns/fcvt_B_S.adoc[]
+<<<
 // include::insns/bf16fma.adoc[]
 // <<<
 
