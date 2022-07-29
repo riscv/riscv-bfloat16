@@ -124,8 +124,18 @@ of the functionality.
 
 This extension provides the minimal required for scalar support of the BFloat16
 format. It enables BFloat16 as an interchange format whereby it
-can be used to convert BFloat16 values. 
-<<riscv_bfloat16_zfbfmin>>.
+can be used to convert between BFloat16 values and FP32 values. 
+
+[%header,cols="^2,4"]
+|===
+|Mnemonic
+|Instruction
+
+|vaeses.[vv,vs]    | <<insns-vaeses>>
+| vaesesm.[vv,vs]   | <<insns-vaesesm>>
+| vaesds.[vv,vs]    | <<insns-vaesds>>
+
+|===
  
 
 === `Zvfbfmin` - Vector BF16 Converts
