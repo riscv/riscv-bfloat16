@@ -1,0 +1,54 @@
+[#insns-FCVT.S.B, reftext="Convert BF16 to FP32"]
+=== FCVT.S.B
+
+Synopsis::
+Convert FP32 value to an FP32 value
+
+Mnemonic::
+FCVT.S.B rd, rs1
+
+Encoding::
+[wavedrom, , svg]
+....
+{reg:[
+{bits: 7, name: 'OP-FP'},
+{bits: 5, name: 'rd'},
+{bits: 3, name: 'rm'},
+{bits: 5, name: 'rs1'},
+{bits: 4, name: 'B?'},
+{bits: 3, name: 'S'},
+{bits: 5, name: 'FVCT.S.B'},
+]}
+....
+
+Description:: 
+Convert BF16 value to an FP32 value. The conversion is exact.
+
+This new floating-point-to-floating-point conversion instruction is defined analogously to the other floating-point-to-floating-point conversion instructions.
+
+Unlike other BF16 instructions, the conversion instructions consume and produce subnormal values.
+
+[Note]
+.Encoding
+While the mnemonic of this instruction matches that of the other RISC-V floating-point convert instructions, the coding is necessarily different as all of the fmt encodings have been assigned to other floating-point formats.
+
+Exceptions: Invalid
+
+Operation::
+--
+
+--
+
+Included in::
+[%header,cols="4,2,2"]
+|===
+|Extension
+|Minimum version
+|Lifecycle state
+
+| <<zFBFMIN>>
+| v0.0.1
+| Initial
+|===
+
+
