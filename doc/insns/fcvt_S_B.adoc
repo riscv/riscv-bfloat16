@@ -15,11 +15,16 @@ Encoding::
 {bits: 5, name: 'rd'},
 {bits: 3, name: 'rm'},
 {bits: 5, name: 'rs1'},
-{bits: 4, name: 'B?'},
-{bits: 3, name: 'S'},
+{bits: 5, name: 'H.B16'},
+{bits: 2, name: 'S'},
 {bits: 5, name: 'FVCT.S.B'},
 ]}
 ....
+
+
+Note::
+The "H.B16" field is intended to signify that the source is 16 bits to be interpreted as BF16.
+We need to see what encodings are currently used here, and if there is any room for such encodings.
 
 Description:: 
 Convert BF16 value to an FP32 value. The conversion is exact.
