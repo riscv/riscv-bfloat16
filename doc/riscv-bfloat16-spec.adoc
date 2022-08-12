@@ -136,6 +136,8 @@ include::riscv-bfloat16-zvfbfwma.adoc[]
 == Instructions
 include::insns/fcvt_B_S.adoc[]
 <<<
+include::insns/fcvt_S_B.adoc[]
+<<<    
 // include::insns/bf16fma.adoc[]
 // <<<
 

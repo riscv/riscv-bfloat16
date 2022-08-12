@@ -10,8 +10,8 @@ can be used to convert between BFloat16 values and FP32 values.
 |Mnemonic
 |Instruction
 
-|FCVTBF16.S    | Scalar convert from FP32 to BF16
-|FCVTS.BF16    | Scalar convert from BF16 to FP32
+|fcvt.b.s    | <<insns-fcvt.b.s>>
+|fcvt.s.b    | <<insns-fcvt.s.b>>
 
 |===
 
