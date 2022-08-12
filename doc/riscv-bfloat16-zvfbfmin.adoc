@@ -5,6 +5,7 @@ This extension provides the minimal required vector support of the BFloat16
 format. It enables BFloat16 as an interchange format whereby it
 can be used to convert BFloat16 values. 
 
+
 [%header,cols="^2,4"]
 |===
 |Mnemonic

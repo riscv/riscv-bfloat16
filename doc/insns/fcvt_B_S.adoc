@@ -25,6 +25,7 @@ Note::
 The "S.B16" field is intended to signify that the source is FP32 and the "H" of the destination is to be interpreted as
 BF16. We need to see what encodings are currently used here, and if there is any room for such encodings.
 
+
 Description:: 
 Convert FP32 value to a BF16 value. Round according to the RM field. 
 

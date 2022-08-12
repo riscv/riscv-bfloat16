@@ -9,10 +9,8 @@ can be used to convert between BFloat16 values and FP32 values.
 |===
 |Mnemonic
 |Instruction
-
 |fcvt.b.s    | <<insns-fcvt.b.s>>
 |fcvt.s.b    | <<insns-fcvt.s.b>>
-
 |===
 
 
