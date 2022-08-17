@@ -1,4 +1,4 @@
-[#insns-vfwcvtbf16.f.f.v, reftext="Vector convert BF16 to FP32"]
+[[insns-vfwcvtbf16.f.f.v, Vector convert BF16 to FP32]]
 === vfwcvtbf16.f.f.v
 
 Synopsis::
@@ -33,7 +33,9 @@ Unlike other BF16 instructions, the conversion instructions consume and produce 
 
 Exceptions: Invalid
 
+
 Operation::
+[source,sail]
 --
 
 --
