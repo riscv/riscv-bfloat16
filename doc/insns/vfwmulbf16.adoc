@@ -1,4 +1,4 @@
-[#insns-vfwmulbf16, reftext="Vector BF16 widening multiply"]
+[[insns-vfwmulbf16, Vector BF16 widening multiply]]
 === vfwmulbf16
 
 Synopsis::
