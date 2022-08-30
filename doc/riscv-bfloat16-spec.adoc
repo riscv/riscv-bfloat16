@@ -134,9 +134,9 @@ include::riscv-bfloat16-zvfbfwma.adoc[]
 
 [[bfloat16_insns, reftext="BFloat16 Instructions"]]
 == Instructions
-include::insns/fcvt_B_S.adoc[]
+include::insns/fcvt_BF16_S.adoc[]
 <<<
-include::insns/fcvt_S_B.adoc[]
+include::insns/fcvt_S_BF16.adoc[]
 <<<
 include::insns/vfncvtbf16_f_f_w.adoc[]
 <<<
