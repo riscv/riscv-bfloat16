@@ -1,11 +1,11 @@
-[[insns-fcvt.b.s, Convert FP32 to BF16]]
-=== FCVT.B.S
+[[insns-fcvt.bf16.s, Convert FP32 to BF16]]
+=== FCVT.BF16.S
 
 Synopsis::
 Convert FP32 value to a BF16 value
 
 Mnemonic::
-FCVT.B.S rd, rs1
+FCVT.BF16.S rd, rs1
 
 Encoding::
 [wavedrom, , svg]
@@ -17,7 +17,7 @@ Encoding::
 {bits: 5, name: 'rs1'},
 {bits: 5, name: 'S.B16'},
 {bits: 2, name: 'H'},
-{bits: 5, name: 'FVCT.B.S'},
+{bits: 5, name: 'FVCT.BF16.S'},
 ]}
 ....
 
