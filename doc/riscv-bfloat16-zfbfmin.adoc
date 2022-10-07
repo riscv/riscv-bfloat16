@@ -5,18 +5,50 @@ This extension provides the minimal required for scalar support of the BFloat16
 format. It enables BFloat16 as an interchange format whereby it
 can be used to convert between BFloat16 values and FP32 values. 
 
-[%header,cols="^2,4"]
+[NOTE]
+====
+Note the following instructions are equivalent to their Zfh counterparts where H is replaced by B and interpreted as BF16.
+====
+
+// Since BF16 has the same exponent encoding as FP32, the only exception that can occur on a conversion from BF16 to FP32 is invalid. This will only be signaled if the BF16 input is a signalling NaN.
+
+[%header]
 |===
-|Mnemonic
-|Instruction
-|fcvt.b.s    | <<insns-fcvt.b.s>>
-|fcvt.s.b    | <<insns-fcvt.s.b>>
+|RV32|RV64|Mnemonic|Instruction
+| ✓ | ✓ | FLB | <<insns-flb>>
+| ✓ | ✓ | FSB | <<insns-fsb>>
+| ✓ | ✓ | FMV.X.B | <<insns-fmv.x.b>>
+| ✓ | ✓ | FMV.B.X | <<insns-fmv.b.x>>
 |===
 
+If the H extension is present additionally provide the following instructions:
+[%header]
+|===
+|RV32|RV64|Mnemonic|Instruction
+| ✓ | ✓ | FCVT.H.B | <<insns-fcvt.h.b>>
+| ✓ | ✓ | FCVT.B.H | <<insns-fcvt.b.h>>
+|===
 
-Scalar floating-point instructions for converting between BF16 and FP32
+If the F extension is present additionally provide the following instructions:
+[%header]
+|===
+|RV32|RV64|Mnemonic|Instruction
+| ✓ | ✓ | FCVT.S.B | <<insns-fcvt.s.b>>
+| ✓ | ✓ | FCVT.B.S | <<insns-fcvt.b.s>>
+|===
 
-Two instructions are provided to convert between BF16 and FP32.
+If the D extension is present additionally provide the following instructions:
+[%header]
+|===
+|RV32|RV64|Mnemonic|Instruction
+| ✓ | ✓ | FCVT.D.B | <<insns-fcvt.d.b>>
+| ✓ | ✓ | FCVT.B.D | <<insns-fcvt.b.d>>
+|===
 
-Since BF16 has the same exponent encoding as FP32, the only exception that can occur on a conversion from BF16 to FP32 is invalid. This will only be signaled if the BF16 input is a signalling NaN.
-
+If the Q extension is present additionally provide the following instructions:
+[%header]
+|===
+|RV32|RV64|Mnemonic|Instruction
+| ✓ | ✓ | FMV.Q.H | <<insns-fcvt.q.b>>
+| ✓ | ✓ | FMV.H.Q | <<insns-fcvt.b.q>>
+|===
