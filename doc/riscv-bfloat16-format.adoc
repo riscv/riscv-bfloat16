@@ -1,9 +1,9 @@
-[[bfloat16_format]]
+[[BF16_format]]
 == Number Format
 
 === BF16 Operand Format
 
-BFloat16 bits::
+BF16 bits::
 [wavedrom, , svg]
 ....
 {reg:[
@@ -13,11 +13,11 @@ BFloat16 bits::
 ]}
 ....
 
-IEEE Compliance: While BFloat16 (BF16) is not an IEEE-754 _standard_ format, it is a valid floating point format as defined by the standard. There are three parameters that specify a format: radix (b), number of digits in the significand (p), and maximum exponent (emax).
+IEEE Compliance: While BF16 (also known as BFloat16) is not an IEEE-754 _standard_ format, it is a valid floating-point format as defined by the standard. There are three parameters that specify a format: radix (b), number of digits in the significand (p), and maximum exponent (emax).
 For BF16 these values are:
 
 [%autowidth]
-.BFloat16 parameters
+.BF16 parameters
 |===
 |radix (b)|2
 |significand (p)|8
@@ -31,7 +31,7 @@ For BF16 these values are:
 |Format|Sign Bits|Expo Bits|fraction bits|padded 0s|encoding bits|expo max/bias|expo min
 
 |FP16    |1| 5|10| 0|16|  15| -14
-|BFloat16|1| 8| 7| 0|16| 127|-126
+|BF16|1| 8| 7| 0|16| 127|-126
 |TF32    |1| 8|10|13|32| 127|-126
 |FP32    |1| 8|23| 0|32| 127|-126
 |FP64    |1|11|52| 0|64|1023|-1022
@@ -42,25 +42,16 @@ For BF16 these values are:
 
 ==== Subnormal Numbers:
 Floating-point values that are too small to be represented as normal numbers, but can still be represented by
-using the format's smallest exponent with a zero integer bit and one or more leading 0s --- and one or
+using the format's smallest exponent value with a zero integer bit and one or more leading 0s --- and one or
 more 1s --- in the trailing fractional bits are called subnormal numbers. Basically, the idea is there is
 a trade off of precision to support _gradual underflow_.
 
-In RISC-V instructions operating on BFloat16, it is generally intended that all subnormal BFloat16 inputs
-are treated as zero and subnormal outputs are flushed to zero. The sign of the original value is retained. 
-However, it does not necessarily make sense for all BF16 instructions to follow this behavior. For
-example, there is little value in such behavior when converting between FP32 and BF16. Therefore, individual
-instructions can specify when they deviate from this behavior.
-
-While '754 doesn't support treating/flushing subnormals, many architectures have adopted such behavior
-as a reasonable simplification for certain domains.
-Furthermore, since BFloat16 has the same exponent range as FP32, supporting subnormals is  expected to
-add little value.
-
+All of the BF16 instructions in the extensions defined in this specification (i.e., Zfbmin, Zvfbfmin
+and Zvfbwma) fully support subnormal numbers. That is, instructions are able to accept subnormal values as
+inputs and they can produce subnormal results.
  
 ====  Infinities:
 Infinities are used to represent values that are too large to be represented by the target format. These are usually produced as a result of overflows (depending on the rounding mode), but can also be provided as inputs. Infinities have a sign associated with them: there are positive infinities and negative infinities.
-
 
 Infinities are important for keeping meaningless results from being operated upon.
 
@@ -74,7 +65,11 @@ There are two types of NaNs: signalling and quiet. Signalling NaNs are provided 
 
 NaNs include a sign bit, but the bit has no meaning.
 
-NaNs are important for keeping meaningless results from being operated upon. It is best to retain them. As IEEE allows, operations should return the canonical NaN rather than be required to propagate the payload.
+NaNs are important for keeping meaningless results from being operated upon.
+
+Except where otherwise explicitly stated, when the result of a floating-point operation is a NaN, it
+is the canonical NaN. For BF16, the RISC-V canonical NaN corresponds to the pattern of _0x7fc0_ which
+is the most significant 16 bits of the RISC-V single-precision canonical NaN.
 
 ==== Scalar NaN Boxing
 
@@ -88,7 +83,7 @@ Nan-boxing never affects the value of the operand itself, it just changes the bi
 ====  Rounding Modes:
 In general, the default IEEE rounding mode (round to nearest, ties to even) is used for arithmetic.
 
-BFloat16 supports all 5 RISC-V Floating-point rounding modes: 
+BF16 supports all 5 RISC-V Floating-point rounding modes: 
 
 .RISC-V Floating Point Rounding Modes
 [cols = "1,1,1"]
@@ -102,5 +97,5 @@ BFloat16 supports all 5 RISC-V Floating-point rounding modes:
 |===
  
 ==== Handling exceptions
-Default exception handling, as defined by IEEE, is a simple and effective approach to producing results in exceptional cases. For the coder to be able to see what has happened, and take further action if needed, the BFloat16 instructions need to set floating-point exception flags the same way as all other floating-point instructions in RISC-V. 
+Default exception handling, as defined by IEEE, is a simple and effective approach to producing results in exceptional cases. For the coder to be able to see what has happened, and take further action if needed, the BF16 instructions need to set floating-point exception flags the same way as all other floating-point instructions in RISC-V. 
 

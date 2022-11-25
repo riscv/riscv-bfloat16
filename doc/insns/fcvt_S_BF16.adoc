@@ -35,8 +35,6 @@ Convert BF16 value to an FP32 value. The conversion is exact.
 
 This new floating-point-to-floating-point conversion instruction is defined analogously to the other floating-point-to-floating-point conversion instructions.
 
-Unlike other BF16 instructions, the conversion instructions consume and produce subnormal values.
-
 Exceptions: Invalid
 
 Operation::

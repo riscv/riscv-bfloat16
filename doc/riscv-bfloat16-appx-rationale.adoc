@@ -1,9 +1,9 @@
 [appendix]
-[[BFloat16_appx_rationale]]
+[[BF16_appx_rationale]]
 = Extension Rationale
 
 == Format Rationale
-Various choices were made in the RISC-V BFloat16 format and behavior.
+Various choices were made in the RISC-V BF16 format and behavior.
 Some of these choices are allowed by IEEE-754 and others are deviations
 from the standard
 
@@ -27,24 +27,24 @@ and minimize rounding error.
 == Instruction Rationale
 
 This section contains various rationale, design notes and usage
-recommendations for the instructions in the BFloat16 extension.
+recommendations for the instructions in the BF16 extension.
 It also tries to record how the designs of instructions were
 derived, or where they were contributed from.
 
 === Conversion Instructions
 
 
-The most common and important conversion instructions are between BFloat16 and FP32
+The most common and important conversion instructions are between BF16 and FP32
 (Single Precision).
 
-We chose not to have direct conversion between BFloat16 and other formats as they
+We chose not to have direct conversion between BF16 and other formats as they
 
 can typically be performed by a combination of instructions. 
 
 .Notes to software developers
 [NOTE,caption="SH"]
 ====
-In some cases, for example convert from FP64 to BFloat16 there can be double rounding.
+In some cases, for example convert from FP64 to BF16 there can be double rounding.
 It is up to software to eliminate such sources of error if this is important to the
 application.
 ====

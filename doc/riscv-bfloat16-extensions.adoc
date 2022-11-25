@@ -1,10 +1,10 @@
-[[bfloat16_extensions]]
+[[BF16_extensions]]
 == Extensions
 
-The group of extensions introduced by the BFloat16 Instruction Set
+The group of extensions introduced by the BF16 Instruction Set
 Extension is listed here.
 
-Detection of individual BFloat16 extensions uses the
+Detection of individual BF16 extensions uses the
 unified software-based RISC-V discovery method.
 
 [NOTE]
@@ -16,21 +16,23 @@ progress.
 .A note on extension rationale
 [NOTE, caption="SH"]
 ====
-BFloat16 instructions are separated into different
+BF16 instructions are separated into different
 functional groups because not all implementations will require all
 of the functionality.
 
 ====
 
 
-The BFloat16 extensions depend on the half-precision floating-point extensions (Zfh and Zfhmin), which in turn rely on the single-precision floating-point extension (F).
+The BF16 extensions defined in this specification depend on the single-precision floating-point extension
+_F_ and the minimal half-precision floating-point extension _Zfhmin_. Therefore, any implementation that
+includes any of these BF16 extensions must also include _F_ and either _Zfhmin_ or _Zfh_. 
 
 
-The Bfloat16 extensions do not add any new load or store instructions, as the FLH and FSH 16-bit load and store instructions introduced by the half-precision extensions work just fine for Bfloat16 values.
+The BF16 extensions do not add any new load or store instructions, as the FLH and FSH 16-bit load and store instructions introduced by the half-precision extensions work just fine for BF16 values.
 
 
-This initial set of BFloat16 extensions provide very basic functionality including conversion between BFloat16 and single-precision values for scalar and vector, and widening multiply-add instructions that return a single-precision result.
+This initial set of BF16 extensions provide very basic functionality including conversion between BF16 and single-precision values for scalar and vector, and widening multiply-add instructions that return a single-precision result.
 
-include::riscv-bfloat16-zfbfmin.adoc[]
-include::riscv-bfloat16-zvfbfmin.adoc[]
-include::riscv-bfloat16-zvfbfwma.adoc[]
+include::riscv-BF16-zfbfmin.adoc[]
+include::riscv-BF16-zvfbfmin.adoc[]
+include::riscv-BF16-zvfbfwma.adoc[]

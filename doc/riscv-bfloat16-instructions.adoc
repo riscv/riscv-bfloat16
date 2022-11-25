@@ -1,4 +1,4 @@
-[[bfloat16_insns, reftext="BFloat16 Instructions"]]
+[[BF16_insns, reftext="BF16 Instructions"]]
 == Instructions
 include::insns/fcvt_BF16_S.adoc[]
 <<<
