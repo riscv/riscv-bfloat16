@@ -1,5 +1,7 @@
 [[bfloat16_format]]
-== BFloat16 Operand Format
+== Number Format
+
+=== BF16 Operand Format
 
 BFloat16 bits::
 [wavedrom, , svg]
@@ -36,9 +38,9 @@ For BF16 these values are:
 |FP128   |1|15|112|0|128|16,383|-16,382
 |===
 
-== BFloat16 behaviors
+=== BF16 Behavior
 
-=== Subnormal Numbers:
+==== Subnormal Numbers:
 Floating-point values that are too small to be represented as normal numbers, but can still be represented by
 using the format's smallest exponent with a zero integer bit and one or more leading 0s --- and one or
 more 1s --- in the trailing fractional bits are called subnormal numbers. Basically, the idea is there is
@@ -56,13 +58,13 @@ Furthermore, since BFloat16 has the same exponent range as FP32, supporting subn
 add little value.
 
  
-===  Infinities:
+====  Infinities:
 Infinities are used to represent values that are too large to be represented by the target format. These are usually produced as a result of overflows (depending on the rounding mode), but can also be provided as inputs. Infinities have a sign associated with them: there are positive infinities and negative infinities.
 
 
 Infinities are important for keeping meaningless results from being operated upon.
 
-=== NaNs
+==== NaNs
 
 NaN stands for Not a Number. These are provided as the result of an operation when it cannot be represented
 as a number or infinity. For example, performing the square root of -1 will result in a NaN because
@@ -74,7 +76,7 @@ NaNs include a sign bit, but the bit has no meaning.
 
 NaNs are important for keeping meaningless results from being operated upon. It is best to retain them. As IEEE allows, operations should return the canonical NaN rather than be required to propagate the payload.
 
-=== Scalar NaN Boxing
+==== Scalar NaN Boxing
 
 RISC-V applies NaN boxing to scalar results and checks for NaN boxing when a floating-point operation --- even a vector-scalar operation --- consumes a value from a scalar floating-point register. If such a value is not NaN Boxed, it is treated as if it were the canonical QNaN.
 
@@ -83,7 +85,7 @@ NaN boxing is nothing more than putting the smaller encoding in the least signif
 Nan-boxing never affects the value of the operand itself, it just changes the bits of the format that is larger than the operand.
 
 
-===  Rounding Modes:
+====  Rounding Modes:
 In general, the default IEEE rounding mode (round to nearest, ties to even) is used for arithmetic.
 
 BFloat16 supports all 5 RISC-V Floating-point rounding modes: 
@@ -99,6 +101,6 @@ BFloat16 supports all 5 RISC-V Floating-point rounding modes:
 |100 | RMM | Round to Nearest, ties to Max Magnitude
 |===
  
-=== Handling exceptions
+==== Handling exceptions
 Default exception handling, as defined by IEEE, is a simple and effective approach to producing results in exceptional cases. For the coder to be able to see what has happened, and take further action if needed, the BFloat16 instructions need to set floating-point exception flags the same way as all other floating-point instructions in RISC-V. 
 

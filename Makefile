@@ -1,5 +1,5 @@
-HEADER_SOURCE := doc/riscv-bfloat16-spec.adoc 
-PDF_RESULT := riscv-bfloat.pdf
+HEADER_SOURCE := doc/riscv-bfloat16.adoc
+PDF_RESULT := riscv-bfloat16.pdf
 
 all: build
 
