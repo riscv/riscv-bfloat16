@@ -43,4 +43,4 @@ number of the BF16 significant bits enabled even smaller multipliers to be built
 to FP16, BF16 multiply-accumulate widening and dot-product instructions started to
 proliferate.
 
-include::riscv-BF16-audience.adoc[]
+include::riscv-bfloat16-audience.adoc[]

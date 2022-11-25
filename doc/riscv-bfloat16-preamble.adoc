@@ -1,7 +1,7 @@
 //:This is the preamble.
 
-[colophon]
-= Colophon
+[preamble]
+// = Colophon
 
 This document describes the BF16 format and instruction extensions to the 
 RISC-V Instruction Set Architecture.
