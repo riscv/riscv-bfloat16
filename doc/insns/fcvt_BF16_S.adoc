@@ -36,13 +36,7 @@ Convert FP32 value to a BF16 value. Round according to the RM field.
 This new floating-point-to-floating-point conversion instruction is defined analogously to the other floating-point-to-floating-point conversion instructions.
 
 
-Exceptions: Inexact, Invalid
-
-[NOTE]
-====
-Converts from BF16 to FP32 cannot cause an underflow exception as the only way to get a subnormal result
-is to start with a subnormal input. At most, a conversion will cause an inexact exception.
-====
+Exceptions:  Overflow, Underflow, Inexact, Invalid
 
 Operation::
 --
