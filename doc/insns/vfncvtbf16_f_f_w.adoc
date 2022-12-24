@@ -36,12 +36,13 @@ Arguments::
 |===
 
 Description:: 
-Convert FP32 to BF16. Round according to the RM field. 
+Convert FP32 to BF16. Round according to the _frm_ register. 
 
 This new floating-point-to-floating-point conversion instruction is defined analogously to
 the pre-existing floating-point-to-floating-point conversion instructions.
 This instruction is similar to vfncvt.f.f.w - Convert double-width float to single-width float.
 However, it is only defined for SEW=16.
+
 Any attempt to execute this instruction with an SEW other than SEW=16 will result in an illegal
 instruction exception.
 
