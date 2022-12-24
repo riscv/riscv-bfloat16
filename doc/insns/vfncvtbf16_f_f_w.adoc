@@ -48,7 +48,6 @@ instruction exception.
 Exceptions:  Overflow, Underflow, Inexact, Invalid
 
 Operation::
---
 [source,sail]
 --
 function clause execute (vfncvtbf16.f.f.w(vs2)) = {
