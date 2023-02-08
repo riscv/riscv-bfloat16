@@ -10,5 +10,5 @@ format. It provides widening BF16 mul-add instructions that produce FP32 results
 |Instruction
 
 |vfwmaccbf16 | <<insns-vfwmaccbf16>>
-|vfwmullbf16 | <<insns-vfwmullbf16>>
+|vfwmulbf16 | <<insns-vfwmulbf16>>
 |===

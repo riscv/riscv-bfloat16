@@ -1,7 +1,5 @@
 [[BF16_audience]]
 === Intended Audience
- THIS IS VERY PRELIMINARY - TO BE UPDATED
-
 Floating-point arithmetic is a specialized subject, requiring people with many different
 backgrounds to cooperate in its correct and efficient implementation.
 Where possible, we have written this specification to be understandable by
@@ -21,16 +19,15 @@ pass to a colleague.
 Software developers::
 These are the people we expect to write code using the instructions
 in this specification.
-They should understand fairly obviously the motivations for the
+They should understand the motivations for the
 instructions we include, and be familiar with most of the algorithms
 and outside standards to which we refer.
 
 Computer architects::
-We do  expect architects to have a floating-point background.
-We nonetheless expect architects to be able to examine our instructions
+We expect architects to have some basic floating-point background.
+Furthermore, we expect architects to be able to examine our instructions
 for implementation issues, understand how the instructions will be used
-in context, and advise on how best to fit the functionality the
-cryptographers want to the ISA interface.
+in context, and advise on how they best to fit the functionality.
 
 Digital design engineers & micro-architects::
 These are the people who will implement the specification inside a
@@ -39,7 +36,10 @@ cases are pointed out in the specification.
 
 Verification engineers::
 Responsible for ensuring the correct implementation of the extension
-in hardware.
+in hardware. These people are expected to have some floating-point
+expertise so that they can identify and generate the interesting corner
+cases --- include exceptions --- that are common in floating-point
+architectures and implementations.
 
 
 These are by no means the only people concerned with the specification,
