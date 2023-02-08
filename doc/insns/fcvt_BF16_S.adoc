@@ -21,14 +21,14 @@ Encoding::
 ]}
 ....
 
-[Note]
-===
+[NOTE]
+====
 While the mnemonic of this instruction is consistent with that of the other RISC-V floating-point convert instructions, the coding is necessarily different as all of the _fmt_ encodings have been assigned to other floating-point formats.
 
 The "S.B16" field is intended to signify that the source is FP32 and the "H" of the destination is
 to be interpreted as BF16. We need to see what encodings are currently used here, and if there is any
 room for such encodings.
-===
+====
 
 Description:: 
 Convert FP32 value to a BF16 value. Round according to the RM field. 
@@ -37,6 +37,13 @@ This new floating-point-to-floating-point conversion instruction is defined anal
 
 
 Exceptions:  Overflow, Underflow, Inexact, Invalid
+
+[NOTE]
+====
+It might seem odd that a conversion to a smaller format with the same exponent can underflow. However, the IEEE-754 definition of underflow requires a loss of accuracy and the a tiny result. An FP32 subnormal number is already tiny.
+If the conversion looses any significant bits, it is inexact and an underflow occurs.
+
+====
 
 Operation::
 --
