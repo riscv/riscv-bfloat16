@@ -2,7 +2,7 @@
 === `Zvfbfwma` - Vector BF16 widening mul-add
 
 This extension provides the vector support of the BF16
-format. It provides widening BF16 mul-add instructions that produce FP32 results. 
+format. It provides widening BF16 mul-add and multiply instructions that produce FP32 results. 
 
 [%header,cols="^2,4"]
 |===
@@ -12,3 +12,4 @@ format. It provides widening BF16 mul-add instructions that produce FP32 results
 |vfwmaccbf16 | <<insns-vfwmaccbf16>>
 |vfwmulbf16 | <<insns-vfwmulbf16>>
 |===
+
