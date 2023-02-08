@@ -12,3 +12,4 @@ format. It provides widening BF16 mul-add and multiply instructions that produce
 |vfwmaccbf16 | <<insns-vfwmaccbf16>>
 |vfwmulbf16 | <<insns-vfwmulbf16>>
 |===
+
