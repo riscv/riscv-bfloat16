@@ -40,6 +40,8 @@ Description::
 Multiplies BF16 values in `vs1` and `vs2` and adds the product to the FP32 value in `vd`.
 The FP32 result is returned with a single rounding based on the mode in the `frm` register.
 
+Any attempt to execute this instruction with an SEW other than SEW=16 will result in an illegal instruction exception.
+
 Exceptions: Overflow, Underflow, Inexact, Invalid
 
 Operation::
