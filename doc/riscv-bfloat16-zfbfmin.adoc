@@ -5,10 +5,12 @@ This extension provides the minimal set of instructions need to enable scalar su
 of the BF16 format. It enables BF16 as an interchange format as it provides conversion
 between BF16 values and FP32 values.
 
-This extension requires that at least the
+This extension requires that either the
 Minimal Half-Precision Floating-Point Standard Extension `Zfhmin`
-be implemented as BF16 relies on "FLH" and "FSH" to load and store
-16-bit values.
+or the Half-Precision Floating-Point Standard Extension `Zfh`
+is implemented as BF16 relies on "FLH" and "FSH" to load and store
+16-bit floating-point values as well as FMV.X.H and FMV.H.X to move 16-bit
+floating-point values to and from integer registers.
 
 [%header,cols="^2,4"]
 |===

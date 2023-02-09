@@ -11,15 +11,27 @@ Encoding::
 [wavedrom, , svg]
 ....
 {reg:[
-{bits: 7, name: 'OP-FP'},
+{bits: 7, name: '1010011', attr: ['OP-FP']},
 {bits: 5, name: 'rd'},
 {bits: 3, name: 'rm'},
 {bits: 5, name: 'rs1'},
-{bits: 5, name: 'S.B16'},
-{bits: 2, name: 'H'},
+{bits: 5, name: '00100', attr: ['BF16.S']},
+{bits: 2, name: '10', attr: ['H']},
 {bits: 5, name: 'FVCT.BF16.S'},
 ]}
+
+// {reg:[
+// {bits: 7, name: 'OP-FP'},
+// {bits: 5, name: 'rd'},
+// {bits: 3, name: 'rm'},
+// {bits: 5, name: 'rs1'},
+// {bits: 5, name: '00100},
+// {bits: 2, name: 'H'},
+// {bits: 5, name: 'FVCT.BF16.S'},
+// ]}
 ....
+
+// S.B16 = 001,S=00
 
 [NOTE]
 ====
