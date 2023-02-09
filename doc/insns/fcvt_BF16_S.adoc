@@ -31,24 +31,24 @@ room for such encodings.
 ====
 
 Description:: 
-Convert FP32 value to a BF16 value. Round according to the RM field. 
+Narrowing convert FP32 value to a BF16 value. Round according to the RM field. 
 
 This new floating-point-to-floating-point conversion instruction is defined analogously to the other floating-point-to-floating-point conversion instructions.
 
+The result is NaN-boxed by writing all of the most significant `FLEN`-32 bits with 1s.
 
 Exceptions:  Overflow, Underflow, Inexact, Invalid
 
-[NOTE]
-====
-It might seem odd that a conversion to a smaller format with the same exponent can underflow. However, the IEEE-754 definition of underflow requires a loss of accuracy and the a tiny result. An FP32 subnormal number is already tiny.
-If the conversion looses any significant bits, it is inexact and an underflow occurs.
+// [NOTE]
+// ====
+// It might seem odd that a conversion to a smaller format with the same exponent can underflow. However, the IEEE-754
+// definition of underflow requires a loss of accuracy and the a tiny result. An FP32 subnormal number is already tiny.
+// If the conversion loses any significant bits, it is inexact and an underflow occurs.
+// ====
 
-====
-
-Operation::
---
-
---
+// Operation::
+// --
+// --
 
 Included in::
 [%header,cols="4,2,2"]

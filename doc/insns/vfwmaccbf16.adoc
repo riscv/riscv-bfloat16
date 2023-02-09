@@ -36,6 +36,24 @@ Encoding (Vector-Scalar)::
 ]}
 ....
 
+Reserved Encodings::
+* `SEW` is any value other than 16 
+
+Arguments::
+[%autowidth]
+[%header,cols="4,2,2,2"]
+|===
+|Register
+|Direction
+|EEW
+|Definition
+
+| Vd  | input  | 32  | FP32 Accumulate
+| Vs1 | input  | 32  | BF16 Source
+| Vs2 | input  | 32  | BF16 Source
+| Vd  | output | 16  | BF16 Result
+|===
+
 Description:: 
 Multiplies BF16 values in `vs1` and `vs2` and adds the product to the FP32 value in `vd`.
 The FP32 result is returned with a single rounding based on the mode in the `frm` register.
@@ -44,7 +62,11 @@ Exceptions: Overflow, Underflow, Inexact, Invalid
 
 Operation::
 --
+Each of the BF16 inputs is widened to FP32 and then an FMACC is performed
 
+vfwcvtbf16.f.f.v T1, vs1, vm
+vfwcvtbf16.f.f.v T2, vs2, vm
+vfmacc.vv vd, T1, T2, vm
 --
 
 Included in::

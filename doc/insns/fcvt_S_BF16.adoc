@@ -35,12 +35,14 @@ Convert BF16 value to an FP32 value. The conversion is exact.
 
 This new floating-point-to-floating-point conversion instruction is defined analogously to the other floating-point-to-floating-point conversion instructions.
 
+The BF16 encoded value is shifted to the left by 16 places and the least significant 16 bits are
+written with 0s. The result is NaN-boxed by writing the most significant `FLEN`-32 bits with 1s.
+
 Exceptions: Invalid
 
-Operation::
---
-
---
+// Operation::
+// --
+// --
 
 Included in::
 [%header,cols="4,2,2"]

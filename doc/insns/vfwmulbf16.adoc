@@ -35,16 +35,46 @@ Encoding (Vector-Scalar)::
 {bits: 6, name: 'funct6'},
 ]}
 ....
+Reserved Encodings::
+* `SEW` is any value other than 16 
+
+Arguments::
+[%autowidth]
+[%header,cols="4,2,2,2"]
+|===
+|Register
+|Direction
+|EEW
+|Definition
+
+| vs1/rs1 | input  | 32  | BF16 Source
+| vs2 | input  | 32  | BF16 Source
+| vd  | output | 16  | BF16 Product
+|===
 
 Description:: 
 Multiplies BF16 values in `vs1` and `vs2`.
 The FP32 result is returned with rounding based on the mode in the `frm` register.
 
+Any attempt to execute this instruction with an SEW other than SEW=16 will result in an illegal
+instruction exception.
+
 Exceptions: Overflow, Underflow, Inexact, Invalid
 
 Operation::
 --
+Each of the BF16 inputs is widened to FP32 and multiplied together.
 
+Vector-vector
+vfwcvtbf16.f.f.v T1, vs1, vm
+vfwcvtbf16.f.f.v T2, vs2, vm
+vfmul.vv vd, T1, T2, vm
+
+vector-scalar
+get scalar
+vfwcvtbf16.f.f.v T1, vs1, vm
+vfwcvtbf16.f.f.v T2, vs2, vm
+vfmul.vv vd, T1, T2, vm
 --
 
 Included in::
