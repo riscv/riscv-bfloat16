@@ -15,22 +15,11 @@ Encoding::
 {bits: 5, name: 'rd'},
 {bits: 3, name: 'rm'},
 {bits: 5, name: 'rs1'},
-{bits: 5, name: '00110', attr: ['S.BF16']},
-{bits: 2, name: '10', attr: ['S']},
-{bits: 5, name: '010000', attr: 'FVCT.S.BF16'},
+{bits: 5, name: '00110', attr: ['BF16']},
+{bits: 2, name: '00', attr: ['S']},
+{bits: 5, name: '01000', attr: 'FVCT'},
 ]}
 ....
-// {reg:[
-// {bits: 7, name: 'OP-FP'},
-// {bits: 5, name: 'rd'},
-// {bits: 3, name: 'rm'},
-// {bits: 5, name: 'rs1'},
-// {bits: 5, name: 'H.BF16'},
-// {bits: 2, name: 'S'},
-// {bits: 5, name: 'FVCT.S.BF16'},
-// ]}
-
-
 
 [Note]
 .Encoding
