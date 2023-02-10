@@ -11,7 +11,7 @@ Encoding::
 [wavedrom, , svg]
 ....
 {reg:[
-{bits: 7, name: '1010111', attr:[`OP-V']},
+{bits: 7, name: '1010111', attr:['OP-V']},
 {bits: 5, name: 'vd'},
 {bits: 3, name: '001', attr:['OPFVV']},
 {bits: 5, name: '11101', attr:['vfncvtbf16']},
