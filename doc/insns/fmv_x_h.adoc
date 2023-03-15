@@ -20,6 +20,12 @@ Encoding::
 {bits: 5, name: '11100', attr: ['FMV.X.H']},
 ]}
 ....
+Included in::
+[%header,cols="4,2,2"]
+|===
+|Extension
+|Minimum version
+|Lifecycle state
 
 | <<zFBFMIN>>
 | v0.0.1

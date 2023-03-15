@@ -19,6 +19,12 @@ Encoding::
 {bits: 7, name: 'imm[11:5]', attr: ['offset[11:5]']},
 ]}
 ....
+Included in::
+[%header,cols="4,2,2"]
+|===
+|Extension
+|Minimum version
+|Lifecycle state
 
 | <<zFBFMIN>>
 | v0.0.1
