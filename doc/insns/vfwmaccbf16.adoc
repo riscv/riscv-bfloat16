@@ -14,7 +14,7 @@ Encoding (Vector-Vector)::
 {reg:[
 {bits: 7, name: '1010111', attr:['OP-V']},
 {bits: 5, name: 'vd'},
-{bits: 3, name: '010', attr:['OPMVV']},
+{bits: 3, name: '001', attr:['OPFVV']},
 {bits: 5, name: 'vs1'},
 {bits: 5, name: 'vs2'},
 {bits: 1, name: 'vm'},
@@ -28,7 +28,7 @@ Encoding (Vector-Scalar)::
 {reg:[
 {bits: 7, name: '1010111', attr:['OP-V']},
 {bits: 5, name: 'vd'},
-{bits: 3, name: '110', attr:['OPMVX']},
+{bits: 3, name: '101', attr:['OPFVF']},
 {bits: 5, name: 'rs1'},
 {bits: 5, name: 'vs2'},
 {bits: 1, name: 'vm'},
@@ -49,8 +49,8 @@ Arguments::
 |Definition
 
 | Vd  | input  | 32  | FP32 Accumulate
-| Vs1 | input  | 32  | BF16 Source
-| Vs2 | input  | 32  | BF16 Source
+| Vs1 | input  | 16  | BF16 Source
+| Vs2 | input  | 16  | BF16 Source
 | Vd  | output | 16  | BF16 Result
 |===
 

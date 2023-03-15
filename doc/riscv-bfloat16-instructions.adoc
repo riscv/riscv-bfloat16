@@ -4,6 +4,14 @@ include::insns/fcvt_BF16_S.adoc[]
 <<<
 include::insns/fcvt_S_BF16.adoc[]
 <<<
+include::insns/fmv_h_x.adoc[]
+<<<
+include::insns/fmv_x_h.adoc[]
+<<<
+include::insns/flh.adoc[]
+<<<
+include::insns/fsh.adoc[]
+<<<
 include::insns/vfncvtbf16_f_f_w.adoc[]
 <<<
 include::insns/vfwcvtbf16_f_f_v.adoc[]
@@ -12,5 +20,4 @@ include::insns/vfwmaccbf16.adoc[]
 <<<
 // include::insns/vfwmulbf16.adoc[]
 // <<<
-
 include::../bibliography.adoc[ieee]

@@ -1,0 +1,29 @@
+[[insns-fmv_h_x, Half-precision Move from Integer Register]]
+=== FMV.H.X
+
+Synopsis::
+Half-Precision Move from Integer Register as defined in the `Zfh` Extension.
+
+Mnemonic::
+FMV.H.X  rd, rs1
+
+Encoding::
+[wavedrom, , svg]
+....
+{reg:[
+{bits: 7, name: '1010011', attr: ['OP-FP']},
+{bits: 5, name: 'rd', attr: ['dest']},
+{bits: 3, name: '000',},
+{bits: 5, name: 'rs1', attr: ['src']},
+{bits: 5, name: '00000'},
+{bits: 2, name: '10', attr: ['H']},
+{bits: 5, name: '11110', attr: ['FMV.H.X']},
+]}
+....
+
+| <<zFBFMIN>>
+| v0.0.1
+| Initial
+|===
+
+

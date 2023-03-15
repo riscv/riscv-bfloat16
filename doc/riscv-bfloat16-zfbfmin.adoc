@@ -5,30 +5,37 @@ This extension provides the minimal set of instructions need to enable scalar su
 of the BF16 format. It enables BF16 as an interchange format as it provides conversion
 between BF16 values and FP32 values.
 
-This extension requires that either the
-Minimal Half-Precision Floating-Point Standard Extension `Zfhmin`
-or the Half-Precision Floating-Point Standard Extension `Zfh`
-is implemented as BF16 relies on `FLH` and `FSH` to load and store
-16-bit floating-point values as well as `FMV.X.H` and `FMV.H.X` to move 16-bit
-floating-point values to and from integer registers.
+This extension includes the `FLH`, `FSH`, `FMV.X.H`, and `FMV.H.X` instructions
+that are defined in the `Zfh` spec.
 
-[NOTE]
-====
-Alternatively, we could drop the Zfbmin requirement and instead explicitly
-include the `FLH`, `FSH`, `FMV.X.H`, and `FMV.H.X` instructions as defined in
-the Zfh spec.
-Requiring Zfbmin adds the following "extra" instructions:
+// This extension requires that either the
+// Minimal Half-Precision Floating-Point Standard Extension `Zfhmin`
+// or the Half-Precision Floating-Point Standard Extension `Zfh`
+// is implemented as BF16 relies on `FLH` and `FSH` to load and store
+// 16-bit floating-point values as well as `FMV.X.H` and `FMV.H.X` to move 16-bit
+// floating-point values to and from integer registers.
 
-- `FCVT.S.H`, and `FCVT.H.S`
-- If D: `FCVT.D.H` and `FCVT.H.D`
-- If Q: `FCVT.Q.H` and `FCVT.H.Q`
-====
+// [NOTE]
+// ====
+// Alternatively, we could drop the Zfbmin requirement and instead explicitly
+// include the `FLH`, `FSH`, `FMV.X.H`, and `FMV.H.X` instructions as defined in
+// the Zfh spec.
+// Requiring Zfbmin adds the following "extra" instructions:
+//
+// - `FCVT.S.H`, and `FCVT.H.S`
+// - If D: `FCVT.D.H` and `FCVT.H.D`
+//- If Q: `FCVT.Q.H` and `FCVT.H.Q`
+// ====
 
-[%header,cols="^2,4"]
+[%header,cols="2,4"]
 |===
 |Mnemonic
 |Instruction
 |FCVT.BF16.S    | <<insns-fcvt.bf16.s>>
 |FCVT.S.BF16    | <<insns-fcvt.s.bf16>>
+|FLH            | <<insns-flh>>
+|FSH            | <<insns-fsh>>
+|FMV.H.X        | <<insns-fmv.h.x>>
+|FMV.X.H        | <<insns-fmv.x.h>>
 |===
 
