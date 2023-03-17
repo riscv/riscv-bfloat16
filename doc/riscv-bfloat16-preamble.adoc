@@ -6,9 +6,8 @@
 This document describes the BF16 format and instruction extensions to the 
 RISC-V Instruction Set Architecture.
 
-This document is in the link:http://riscv.org/spec-state[Discussion State].
-This specification is in the early stages. Comments and proposals
-are encouraged.
+This document is in the link:http://riscv.org/spec-state[Stable State].
+Only limited changes may occur.
 For more information, see link:http://riscv.org/spec-state[here].
 
 [NOTE]
@@ -21,7 +20,7 @@ link:http://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.
 ====
 //include::git-commit.adoc[]
 
-See link:https://github.com/riscv/riscv-alt-fp[github.com/riscv/riscv-alt-fp]
+See link:https://github.com/riscv/riscv-bfloat16[github.com/riscv/riscv-bfloat16]
 for more information.
 ====
 
@@ -33,9 +32,10 @@ include:
 [square]
 * GouYue +
 * link:mailto:kad@rivosinc.com[Ken Dockser] (Editor) +
+* Kenneth Rovers +
 * Nick Knight +
-* _Your name here_ +
+* Nicolas Brunie +
 
-We will be very grateful to the huge number of other people who will
+We are grateful to the other people who
 have helped to improve this specification through their comments, reviews,
 feedback and questions.

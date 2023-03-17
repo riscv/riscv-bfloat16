@@ -26,7 +26,7 @@ encoding.  This approach has become very common in inferencing where the weights
 activations are stored in FP16 encodings.  There was the added benefit that smaller
 multipliers could be created for the FP16's smaller number of significant bits. At this
 point, widening multiply-accumulate instructions became much more common. Also, more
-complicated dot product instructions started to show up including those that stored two
+complicated dot product instructions started to show up including those that packed two
 FP16 numbers in a 32-bit register, multiplied these by another pair of FP16 numbers in
 another register, added these two products to an FP32 accumulate value in a 3rd register
 and returned an FP32 result. 
