@@ -54,6 +54,8 @@ Arguments::
 | vd  | output | 16  | BF16 Product
 |===
 
+Note:: this instruction is no longer part of the proposed `Zvfbfwma` extension and is kept as archive in the source repo.
+
 Description:: 
 Multiplies BF16 values in `vs1` and `vs2`.
 The FP32 result is returned with rounding based on the mode in the `frm` register.
@@ -88,7 +90,7 @@ Included in::
 
 | <<zvfbfwma>>
 | v0.0.1
-| Initial
+| Removed
 |===
 
 
