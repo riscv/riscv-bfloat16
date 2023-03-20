@@ -2,7 +2,7 @@
 == Extensions
 
 The group of extensions introduced by the BF16 Instruction Set
-Extension is listed here.
+Extensions is listed here.
 
 Detection of individual BF16 extensions uses the
 unified software-based RISC-V discovery method.
@@ -13,22 +13,21 @@ At the time of writing, these discovery mechanisms are still a work in
 progress.
 ====
 
-.A note on extension rationale
-[NOTE, caption="SH"]
-====
-BF16 instructions are separated into different
-functional groups because not all implementations will require all
-of the functionality.
-
-====
+//.A note on extension rationale
+//[NOTE, caption="SH"]
+//====
+//BF16 instructions are separated into different
+//functional groups because not all implementations will require all
+//of the functionality.
+//====
 
 
 The BF16 extensions defined in this specification depend on the single-precision floating-point extension
-_F_ and the minimal half-precision floating-point extension _Zfhmin_. Therefore, any implementation that
-includes any of these BF16 extensions must also include _F_ and either _Zfhmin_ or _Zfh_. 
+`F`.
 
 
-The BF16 extensions do not add any new load or store instructions, as the FLH and FSH 16-bit load and store instructions introduced by the half-precision extensions work just fine for BF16 values.
+//The BF16 extensions do not add any new load, store or move instructions, instead the `Zfbfmin` extension
+//includes the `FLH`, `FSH`, `FMV.H.X`, and `FMV.X.H` instructions as defined in the `Zfh` extension.
 
 
 This initial set of BF16 extensions provide very basic functionality including conversion between BF16 and single-precision values for scalar and vector, and widening multiply-add instructions that return a single-precision result.

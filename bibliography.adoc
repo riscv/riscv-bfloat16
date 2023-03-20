@@ -2,5 +2,5 @@
 == Bibliography
 
 bibliography::[]
-https://https://ieeexplore.ieee.org/document/8766229[754-2019 - IEEE Standard for Floating-Point Arithmetic] +
+https://ieeexplore.ieee.org/document/8766229[754-2019 - IEEE Standard for Floating-Point Arithmetic] +
 https://ieeexplore.ieee.org/document/4610935[754-2008 - IEEE Standard for Floating-Point Arithmetic]

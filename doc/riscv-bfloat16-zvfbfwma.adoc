@@ -13,14 +13,23 @@ a vector widening BF16 mul-add instruction that produces FP32 results.
 // 16-bit floating-point values as well as `FMV.X.H` and `FMV.H.X` to move 16-bit
 // floating-point values to and from integer registers.
 
+This extension includes the `FLH`, `FSH`, instructions
+that are defined in the `Zfh` spec.
 
+[NOTE]
+====
+the `FLH`, `FSH`, instructions provide and save the scalar 
+operands required for the vector-scalar `vfwmaccbf16.vf` instruction.
+====
 
-[%header,cols="^2,4"]
+[%autowidth]
+[%header,cols="2,4"]
 |===
 |Mnemonic
 |Instruction
 
-|vfwmaccbf16 | <<insns-vfwmaccbf16>>
-// |vfwmulbf16  | <<insns-vfwmulbf16>>
+|VFWMACCBF16 | <<insns-vfwmaccbf16>>
+|FLH         | <<insns-flh>>
+|FSH         | <<insns-fsh>>
 |===
 
