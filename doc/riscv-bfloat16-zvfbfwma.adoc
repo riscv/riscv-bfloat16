@@ -2,18 +2,9 @@
 === `Zvfbfwma` - Vector BF16 widening mul-add
 
 This extension provides
-// the vector support of the BF16
-// format. It provides widening BF16 mul-add and multiply instructions that produce FP32 results. 
-a vector widening BF16 mul-add instruction that produces FP32 results. 
+a vector widening BF16 mul-add instruction that accumulates into FP32. 
 
-// This extension requires that either the
-// Minimal Half-Precision Floating-Point Standard Extension `Zfhmin`
-// or the Half-Precision Floating-Point Standard Extension `Zfh`
-// is implemented as BF16 relies on `FLH` and `FSH` to load and store
-// 16-bit floating-point values as well as `FMV.X.H` and `FMV.H.X` to move 16-bit
-// floating-point values to and from integer registers.
-
-This extension includes the `FLH`, `FSH`, instructions
+This extension includes the `FLH`, `FSH`, `FMV.X.H`, and `FMV.H.X` instructions
 that are defined in the `Zfh` spec.
 
 [NOTE]
@@ -29,7 +20,9 @@ operands required for the vector-scalar `vfwmaccbf16.vf` instruction.
 |Instruction
 
 |VFWMACCBF16 | <<insns-vfwmaccbf16>>
-|FLH         | <<insns-flh>>
-|FSH         | <<insns-fsh>>
+|FLH            | <<insns-flh>>
+|FSH            | <<insns-fsh>>
+|FMV.H.X        | <<insns-fmv_h_x>>
+|FMV.X.H        | <<insns-fmv_x_h>>
 |===
 
