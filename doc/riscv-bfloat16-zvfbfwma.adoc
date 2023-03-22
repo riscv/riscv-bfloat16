@@ -9,7 +9,7 @@ that are defined in the `Zfh` spec.
 
 [NOTE]
 ====
-the scalar load and move instructions are required so that BF16 scalar operands can be provided
+The scalar load and move instructions are included so that BF16 scalar operands can be provided
 for the vector-scalar `vfwmaccbf16.vf` instruction.
 ====
 

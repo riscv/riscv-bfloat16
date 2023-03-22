@@ -27,7 +27,7 @@ Encoding::
 ====
 .Encoding
 While the mnemonic of this instruction is consistent with that of the other RISC-V floating-point convert instructions,
-a new coding is used in bits 24:20.
+a new encoding is used in bits 24:20.
 
 `BF16.S` is used to signify that the source is FP32 and the "H" of the destination is
 in BF16 format.
