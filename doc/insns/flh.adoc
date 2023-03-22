@@ -28,6 +28,9 @@ Included in::
 | <<zFBFMIN>>
 | v0.0.1
 | Initial
+| <<zvfbfwma>>
+| v0.0.1
+| Initial
 |===
 
 
