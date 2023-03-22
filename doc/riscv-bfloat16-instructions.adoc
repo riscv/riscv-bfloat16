@@ -18,6 +18,4 @@ include::insns/vfwcvtbf16_f_f_v.adoc[]
 <<<
 include::insns/vfwmaccbf16.adoc[]
 <<<
-// include::insns/vfwmulbf16.adoc[]
-// <<<
 include::../bibliography.adoc[ieee]

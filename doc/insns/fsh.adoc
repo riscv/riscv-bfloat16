@@ -1,5 +1,5 @@
 [[insns-fsh, Half-precision Store]]
-=== FLH
+=== FSH
 
 Synopsis::
 Half-Precision Store as defined in the `Zfh` Extension.
@@ -26,7 +26,7 @@ Included in::
 |Minimum version
 |Lifecycle state
 
-| <<zFBFMIN>>
+| <<zfbfmin>>
 | v0.0.1
 | Initial
 | <<zvfbfwma>>

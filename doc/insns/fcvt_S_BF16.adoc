@@ -21,18 +21,20 @@ Encoding::
 ]}
 ....
 
-[Note]
+[NOTE]
+====
 .Encoding
-While the mnemonic of this instruction is consistent with that of the other RISC-V floating-point convert instructions, the coding is necessarily different as all of the _fmt_ encodings have been assigned to other floating-point formats.
+While the mnemonic of this instruction is consistent with that of the other RISC-V floating-point
+convert instructions, a new coding is
+used in bits 24:20 to indicate that the destination in BF16
+====
 
-.Encoding
-The "H.B16" field is intended to signify that the source is 16 bits to be interpreted as BF16.
-We need to see what encodings are currently used here, and if there is any room for such encodings.
 
 Description:: 
-Convert BF16 value to an FP32 value. The conversion is exact.
+Converts a BF16 value to an FP32 value. The conversion is exact.
 
-This new floating-point-to-floating-point conversion instruction is defined analogously to the other floating-point-to-floating-point conversion instructions.
+This new floating-point-to-floating-point conversion instruction is defined analogously to the
+pre-existing floating-point-to-floating-point conversion instructions.
 
 The BF16 encoded value is shifted to the left by 16 places and the least significant 16 bits are
 written with 0s. The result is NaN-boxed by writing the most significant `FLEN`-32 bits with 1s.
@@ -50,7 +52,7 @@ Included in::
 |Minimum version
 |Lifecycle state
 
-| <<zFBFMIN>>
+| <<zfbfmin>>
 | v0.0.1
 | Initial
 |===

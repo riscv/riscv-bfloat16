@@ -1,4 +1,4 @@
-[[zfbfmin,Zfbfmin]]
+[[zfbfmin, Zfbfmin]]
 === `Zfbfmin` - Scalar BF16 Converts
 
 This extension provides the minimal set of instructions needed to enable scalar support

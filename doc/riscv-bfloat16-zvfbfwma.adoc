@@ -9,8 +9,8 @@ that are defined in the `Zfh` spec.
 
 [NOTE]
 ====
-the `FLH`, `FSH`, instructions provide and save the scalar 
-operands required for the vector-scalar `vfwmaccbf16.vf` instruction.
+the scalar load and move instructions are required so that BF16 scalar operands can be provided
+for the vector-scalar `vfwmaccbf16.vf` instruction.
 ====
 
 [%autowidth]

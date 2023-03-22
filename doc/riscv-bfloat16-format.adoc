@@ -62,7 +62,7 @@ inputs and they can produce subnormal results.
 
 [NOTE]
 ====
-Future floating-point extensions, including those that operate on BF16 values, may chose to not support subnormal numbers.
+Future floating-point extensions, including those that operate on BF16 values, may chose not to support subnormal numbers.
 The comments about supporting subnormal BF16 values are limited to those instructions defined in this specification. 
 ====
  
@@ -109,9 +109,8 @@ are more significant than the operand's most significant bit.
 
 
 ====  Rounding Modes:
-In general, the default IEEE rounding mode (round to nearest, ties to even) is used for arithmetic.
 
-BF16 supports all 5 RISC-V Floating-point rounding modes: 
+BF16 instructions support all 5 RISC-V Floating-point rounding modes: 
 
 [%autowidth]
 .RISC-V Floating Point Rounding Modes
@@ -125,6 +124,8 @@ BF16 supports all 5 RISC-V Floating-point rounding modes:
 |100 | RMM | Round to Nearest, ties to Max Magnitude
 |===
  
+In practice, the default IEEE rounding mode (round to nearest, ties to even) is generally used for arithmetic.
+
 ==== Handling exceptions
 RISC-V supports IEEE-defined default exception handling. BF16 is no exception.
 
@@ -138,10 +139,14 @@ in RISC-V.
 The IEEE-defined underflow exception requires that a result be inexact and tiny, where tininess can be
 detected before or after rounding. In RISC-V, tininess is detected after rounding.
 
-It is important to note that tininess detected after rounding is performed as if the exponent were unbounded.
-This means that the result needs to be normalized before rounding. This is different from the actual rounding
-on the final result which includes first denormalizing the result until the exponent is the lowest supported by
-the format. This can result in underflow being signalled for values that are rounded back to the normal range.
+It is important to note that the detection of tininess after rounding requires its own rounding
+that is different from the final result rounding.  This tininess detection requires rounding as if the
+exponent were unbounded.
+This means that the input to the rounder is always a normal number.
+This is different from the final result rounding where the input to the rounder is a subnormal number when
+the value is too small to be represented as a normal number in the target format. 
+The two different roundings can result in underflow being signalled for results that are rounded
+back to the normal range.
 
 As is defined in '754, under default exception handling, underflow is only signalled when the result is tiny
 and inexact. In such a case, both the underflow and inexact flags are raised.

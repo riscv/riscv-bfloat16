@@ -27,7 +27,7 @@ Included in::
 |Minimum version
 |Lifecycle state
 
-| <<zFBFMIN>>
+| <<zfbfmin>>
 | v0.0.1
 | Initial
 | <<zvfbfwma>>

@@ -51,7 +51,7 @@ Arguments::
 | Vd  | input  | 32  | FP32 Accumulate
 | Vs1 | input  | 16  | BF16 Source
 | Vs2 | input  | 16  | BF16 Source
-| Vd  | output | 16  | BF16 Result
+| Vd  | output | 32  | FP32 Result
 |===
 
 Description:: 
@@ -64,8 +64,8 @@ Operation::
 --
 Each of the BF16 inputs is widened to FP32 and then an FMACC is performed
 
-vfwcvtbf16.f.f.v T1, vs1, vm
-vfwcvtbf16.f.f.v T2, vs2, vm
+vfwcvtbf16.f.f.v T1, vs1, vm +
+vfwcvtbf16.f.f.v T2, vs2, vm +
 vfmacc.vv vd, T1, T2, vm
 --
 
