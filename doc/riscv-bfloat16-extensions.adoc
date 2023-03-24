@@ -19,5 +19,6 @@ The BF16 extensions defined in this specification depend on the single-precision
 This initial set of BF16 extensions provides very basic functionality including scalar and vector conversion between BF16 and single-precision values, and vector widening multiply-add instructions.
 
 include::riscv-bfloat16-zfbfmin.adoc[]
+include::riscv-bfloat16-zfbfinxmin.adoc[]
 include::riscv-bfloat16-zvfbfmin.adoc[]
 include::riscv-bfloat16-zvfbfwma.adoc[]
