@@ -5,7 +5,7 @@ This extension provides
 a vector widening BF16 mul-add instruction that accumulates into FP32. 
 
 This extension includes the `FLH`, `FSH`, `FMV.X.H`, and `FMV.H.X` instructions
-that are defined in the `Zfh` spec.
+that are defined in the `Zfh` spec. It depends on the `Zve32f` extension.
 
 [NOTE]
 ====
