@@ -26,7 +26,7 @@ Encoding::
 .Encoding
 While the mnemonic of this instruction is consistent with that of the other RISC-V floating-point
 convert instructions, a new encoding is
-used in bits 24:20 to indicate that the source in BF16
+used in bits 24:20 to indicate that the source is BF16.
 ====
 
 
