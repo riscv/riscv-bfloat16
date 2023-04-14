@@ -5,8 +5,8 @@ Synopsis::
 Vector BF16 widening multiply-accumulate
 
 Mnemonic::
-vfwmaccbf16.vv vd, vs2, vs1, vm +
-vfwmaccbf16.vf vd, vs2, rs1, vm +
+vfwmaccbf16.vv vd, vs1, vs2, vm +
+vfwmaccbf16.vf vd, rs1, vs2, vm +
 
 Encoding (Vector-Vector)::
 [wavedrom, , svg]
