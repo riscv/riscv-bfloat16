@@ -8,12 +8,6 @@ between BF16 values and FP32 values.
 This extension includes the `FLH`, `FSH`, `FMV.X.H`, and `FMV.H.X` instructions
 that are defined in the `Zfh` spec.
 
-// Requiring Zfbfmin adds the following "extra" instructions:
-//
-// - `FCVT.S.H`, and `FCVT.H.S`
-// - If D: `FCVT.D.H` and `FCVT.H.D`
-//- If Q: `FCVT.Q.H` and `FCVT.H.Q`
-
 
 [%autowidth]
 [%header,cols="2,4"]

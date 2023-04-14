@@ -110,7 +110,10 @@ are more significant than the operand's most significant bit.
 
 ====  Rounding Modes:
 
-BF16 instructions support all 5 RISC-V Floating-point rounding modes: 
+As is the case with other foating-point instructions, 
+the BF16 instructions support all 5 RISC-V Floating-point rounding modes.
+These modes can be specified in the `rm` field of scalar instructions
+as well as in the `frm` CSR  
 
 [%autowidth]
 .RISC-V Floating Point Rounding Modes
@@ -124,6 +127,19 @@ BF16 instructions support all 5 RISC-V Floating-point rounding modes:
 |100 | RMM | Round to Nearest, ties to Max Magnitude
 |===
  
+As with other scalar floating-point instructions, the rounding mode field
+`rm` can also take on the 
+`DYN` encopding, which indicates that the instruction uses the rounding
+mode specified in the `frm` CSR.
+
+[%autowidth]
+.Aditional encoding for the `rm` field of scalar instructions
+[cols = "1,1,1"]
+|===
+|Rounding Mode | Mnemonic | Meaning
+|111 | DYN | select dynamic rounding mode
+|===
+
 In practice, the default IEEE rounding mode (round to nearest, ties to even) is generally used for arithmetic.
 
 ==== Handling exceptions
