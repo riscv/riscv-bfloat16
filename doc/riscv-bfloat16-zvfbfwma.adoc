@@ -7,6 +7,8 @@ a vector widening BF16 mul-add instruction that accumulates into FP32.
 This extension includes the `FLH`, `FSH`, `FMV.X.H`, and `FMV.H.X` instructions
 that are defined in the `Zfh` spec.
 
+This extension depends on the "V" extension or the `Zve32f` embedded vector extension.
+
 [NOTE]
 ====
 The scalar load and move instructions are included so that BF16 scalar operands can be provided

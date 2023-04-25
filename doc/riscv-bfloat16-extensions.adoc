@@ -15,8 +15,8 @@ progress.
 
 The BF16 extensions defined in this specification depend on the single-precision floating-point extension
 `F`. Furthermore, the vector BF16 extensions depend on the "V"
-extension or one of the `Zve32f`, `Zve64f`, or `Zve64d` embedded
-vector extensions.
+// extension or one of the `Zve32f`, `Zve64f`, or `Zve64d` embedded vector extensions.
+or the `Zve32f` embedded vector extension.
 
 This initial set of BF16 extensions provides very basic functionality including scalar and vector conversion between BF16 and single-precision values, and vector widening multiply-add instructions.
 

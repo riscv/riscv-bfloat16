@@ -2,8 +2,8 @@
 = RISC-V BF16 Extensions
 :description: The BF16 format and instruction extensions for the RISC-V ISA.
 :company: RISC-V.org
-:revdate:  22 March, 2023
-:revnumber: v0.2.1
+:revdate:  24 April, 2023
+:revnumber: v0.5.0
 :revremark: Draft
 :url-riscv: http://riscv.org
 :doctype: book
