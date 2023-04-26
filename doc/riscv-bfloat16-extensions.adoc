@@ -14,48 +14,10 @@ progress.
 ====
 
 The BF16 extensions defined in this specification depend on the single-precision floating-point extension
-`F`. Furthermore, the vector BF16 extensions depend on the "V"
-// extension or one of the `Zve32f`, `Zve64f`, or `Zve64d` embedded vector extensions.
-or the `Zve32f` embedded vector extension.
+`F`. Furthermore, the vector BF16 extensions depend on the "V" Vector Extension for Application Processors
+or the `Zve32f` Vector Extension for Embedded Processors.
 
-This initial set of BF16 extensions provides very basic functionality including scalar and vector conversion between BF16 and single-precision values, and vector widening multiply-add instructions.
-
-[NOTE]
-====
-While conversion instructions tend include all supported formats, in these extensions we
-only support conversion between BF16 and FP32 as we are targeting a special use case.
-These extensions are intended to support the case where BF16 values are used as reduced
-precision versions of FP32 values, where use of BF16 provides a two-fold advantage for
-storage, bandwidth and computation. 
-
-allows for twice the computational and data movement performance 
-twice the number of BF16 values can be stored
-and transported  form can be effectively transas inputs
-and results are accumulated into FP32 sums. These sums are typcially converted to BF16
-and then used as subsequent inputs. The operations on these values can be performed
-on the CPU or a loosly coupled coprocessor.
-
-Subsequent extensions might provide support of native BF16 arithmetic. Such extensions
-could add additional conversion
-instructions to allow all suported formats to be converted to and from BF16.  
-====
-
-[NOTE]
-====
-BF16 arithmetic operations can be
-faithfully emulated by converting the BF16 operands to single-precision, performing the
-operation using single-precision arithmetic, then converting back to BF16. Performing
-BF16 fused multiply-addition using this method can produce results that differ by 1-ulp 
-on some inputs for the RNE and RMM rounding modes.
-
-Likewise, exact conversions from BF16 to larger precisions by first
-converting to FP32 and then converting from FP32 to the target precision. Conversions
-from larger precisions coud be synthesized by first converting to FP32 and then
-converting from FP32 to BF16. As with the arithmetic instructions described above,
-this method of converting values to BF16 can be off by by 1-ulp 
-on some inputs for the RNE and RMM rounding modes.
-====
-
+This initial set of BF16 extensions provides very basic functionality including scalar and vector conversion between BF16 and single-precision values, and vector widening multiply-accumulate instructions.
 
 
 include::riscv-bfloat16-zfbfmin.adoc[]
