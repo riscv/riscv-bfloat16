@@ -60,6 +60,9 @@ Included in::
 | <<zfbfmin>>
 | v0.0.1
 | Initial
+| <<zfbfinxmin>>
+| v0.0.1
+| Initial
 |===
 
 
