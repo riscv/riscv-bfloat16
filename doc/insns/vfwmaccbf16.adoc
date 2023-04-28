@@ -55,7 +55,7 @@ Arguments::
 |===
 
 Description:: 
-This instruction perfoms a wideing fused multiply-accumulate operation, when each pair of BF16 values
+This instruction performs a wideing fused multiply-accumulate operation, when each pair of BF16 values
 are multiplied and their unrounded product is added to the corresponding FP32 accumulate value. The
 sum is rounded to FP32.
 In the vector-vector version, the BF16 elements are read from `vs1` and `vs2` and
