@@ -48,10 +48,10 @@ Arguments::
 |EEW
 |Definition
 
-| Vd  | input  | 32  | FP32 Accumulate
-| Vs1 | input  | 16  | BF16 Source
-| Vs2 | input  | 16  | BF16 Source
-| Vd  | output | 32  | FP32 Result
+| Vd      | input  | 32  | FP32 Accumulate
+| Vs1/rs1 | input  | 16  | BF16 Source
+| Vs2     | input  | 16  | BF16 Source
+| Vd      | output | 32  | FP32 Result
 |===
 
 Description:: 
@@ -81,13 +81,13 @@ vfwcvtbf16.f.f.v T2, vs2, vm
 vfmacc.vv        vd, T1, T2, vm
 --
 
-Likewise, `vfwmaccbf16.vs` is equivalent to the following instruction sequence:
+Likewise, `vfwmaccbf16.vf` is equivalent to the following instruction sequence:
 
 [source,asm]
 --
 fcvt.s.bf16      T1, rs1
 vfwcvtbf16.f.f.v T2, vs2, vm
-vfmacc.vv        vd, T1, T2, vm
+vfmacc.vf        vd, T1, T2, vm
 --
 
 
