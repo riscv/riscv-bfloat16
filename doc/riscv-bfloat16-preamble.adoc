@@ -31,7 +31,7 @@ Contributors to all versions of the specification (in alphabetical order)
 include:
 [square]
 * GouYue +
-* link:mailto:kad@rivosinc.com[Ken Dockser] (Editor) +
+* link:mailto:kdockser@tenstorrent.com[Ken Dockser] (Editor) +
 * Kenneth Rovers +
 * Nick Knight +
 * Nicolas Brunie +

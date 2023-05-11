@@ -21,6 +21,6 @@ This initial set of BF16 extensions provides very basic functionality including 
 
 
 include::riscv-bfloat16-zfbfmin.adoc[]
-include::riscv-bfloat16-zfbfinxmin.adoc[]
+// include::riscv-bfloat16-zfbfinxmin.adoc[]
 include::riscv-bfloat16-zvfbfmin.adoc[]
 include::riscv-bfloat16-zvfbfwma.adoc[]
