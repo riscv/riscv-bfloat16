@@ -17,7 +17,7 @@ Encoding::
 {bits: 5, name: 'rs1'},
 {bits: 5, name: '01000', attr: ['BF16.S']},
 {bits: 2, name: '10', attr: ['H']},
-{bits: 5, name: '01000', attr: 'FVCT'},
+{bits: 5, name: '01000', attr: 'FCVT'},
 ]}
 ....
 // S.B16 = 001,S=00
