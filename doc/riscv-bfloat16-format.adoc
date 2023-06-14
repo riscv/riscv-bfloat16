@@ -129,7 +129,7 @@ as well as in the `frm` CSR
  
 As with other scalar floating-point instructions, the rounding mode field
 `rm` can also take on the 
-`DYN` encopding, which indicates that the instruction uses the rounding
+`DYN` encoding, which indicates that the instruction uses the rounding
 mode specified in the `frm` CSR.
 
 [%autowidth]
