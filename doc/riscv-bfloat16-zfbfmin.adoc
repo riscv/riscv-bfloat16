@@ -51,9 +51,9 @@ on some inputs for the RNE and RMM rounding modes.
 |Instruction
 |FCVT.BF16.S    | <<insns-fcvt.bf16.s>>
 |FCVT.S.BF16    | <<insns-fcvt.s.bf16>>
-|FLH            | <<insns-flh>>
-|FSH            | <<insns-fsh>>
-|FMV.H.X        | <<insns-fmv_h_x>>
-|FMV.X.H        | <<insns-fmv_x_h>>
+|FLH            | 
+|FSH            |
+|FMV.H.X        |
+|FMV.X.H        |
 |===
 
