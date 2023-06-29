@@ -43,10 +43,15 @@ Widening convert from BF16 to FP32. The conversion is exact.
 This instruction is similar to `vfwcvt.f.f.v` - Convert single-width float to double-width float.
 However, the single-width float is limited to the BF16 format.
 
-If the input is normal or infinity, the BF16 encoded value is shifted to the left by 16 places and the
+[NOTE]
+====
+If the input is normal or infinity, the BF16 encoded value is shifted 
+to the left by 16 places and the
 least significant 16 bits are written with 0s.
-If the input is a NaN, the canonical NaN is returned. Furthermore, if the input is a signalling NaN,
-the invalid flag is rasied.
+====
+// If the input is a NaN, the canonical NaN is returned. Furthermore,
+// if the input is a signalling NaN,
+// the invalid flag is rasied.
 
 Exceptions: Invalid
 
