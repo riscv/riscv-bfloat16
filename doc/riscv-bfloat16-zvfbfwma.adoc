@@ -7,12 +7,6 @@ a vector widening BF16 mul-add instruction that accumulates into FP32.
 // This extension depends on the "V" extension or the `Zve32f` embedded vector extension.
 This extension requires the `Zvfbfmin` extension.
 
-[NOTE]
-====
-The scalar load and move instructions are included so that BF16 scalar operands can be provided
-for the vector-scalar `vfwmaccbf16.vf` instruction.
-====
-
 [%autowidth]
 [%header,cols="2,4"]
 |===
