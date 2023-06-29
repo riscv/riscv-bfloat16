@@ -49,19 +49,7 @@ Exceptions:  Overflow, Underflow, Inexact, Invalid
 // --
 // --
 
-Included in::
-[%header,cols="4,2,2"]
-|===
-|Extension
-|Minimum version
-|Lifecycle state
+Included in: <<zfbfmin>>
 
-| <<zfbfmin>>
-| v0.0.1
-| Initial
-// | <<zfbfinxmin>>
-// | v0.0.1
-// | Initial
-|===
 
 

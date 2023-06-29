@@ -90,17 +90,4 @@ vfwcvtbf16.f.f.v T2, vs2, vm
 vfmacc.vf        vd, T1, T2, vm
 --
 
-
-Included in::
-[%header,cols="4,2,2"]
-|===
-|Extension
-|Minimum version
-|Lifecycle state
-
-| <<zvfbfwma>>
-| v0.0.1
-| Initial
-|===
-
-
+Included in: <<zvfbfwma>>

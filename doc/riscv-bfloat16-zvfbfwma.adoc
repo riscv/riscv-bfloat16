@@ -5,7 +5,7 @@ This extension provides
 a vector widening BF16 mul-add instruction that accumulates into FP32. 
 
 // This extension depends on the "V" extension or the `Zve32f` embedded vector extension.
-This extension depends on `Zvfbfmin` extension.
+This extension requires the `Zvfbfmin` extension.
 
 [NOTE]
 ====
