@@ -38,10 +38,9 @@ a new encoding is used in bits 24:20.
 Description::
 Narrowing convert FP32 value to a BF16 value. Round according to the RM field.
 
-This new floating-point-to-floating-point conversion instruction is defined analogously to the
-pre-existing floating-point-to-floating-point conversion instructions.
+This instruction is similar to other narrowing
+floating-point-to-floating-point conversion instructions.
 
-The result is NaN-boxed by writing all of the most significant `FLEN`-16 bits with 1s.
 
 Exceptions:  Overflow, Underflow, Inexact, Invalid
 

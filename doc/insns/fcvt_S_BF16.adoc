@@ -34,22 +34,21 @@ used in bits 24:20 to indicate that the source is BF16.
 Description:: 
 Converts a BF16 value to an FP32 value. The conversion is exact.
 
-This new floating-point-to-floating-point conversion instruction is defined analogously to the
-pre-existing floating-point-to-floating-point conversion instructions.
+This instruction is similar to other widening
+floating-point-to-floating-point conversion instructions.
 
-If the input is normal or infinity, the BF16 encoded value is shifted to the left by 16 places and the
+[NOTE]
+====
+If the input is normal or infinity, the BF16 encoded value is shifted 
+to the left by 16 places and the
 least significant 16 bits are written with 0s.
-If the input is a NaN, the canonical NaN is returned. Furthermore, if the input is a signalling NaN,
-the invalid flag is rasied. 
-
 
 The result is NaN-boxed by writing the most significant `FLEN`-32 bits with 1s.
+====
+
+
 
 Exceptions: Invalid
-
-// Operation::
-// --
-// --
 
 Included in: <<zfbfmin>>
 
