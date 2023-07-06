@@ -13,11 +13,16 @@ At the time of writing, these discovery mechanisms are still a work in
 progress.
 ====
 
-The BF16 extensions defined in this specification depend on the single-precision floating-point extension
-`F`. Furthermore, the vector BF16 extensions depend on the "V" Vector Extension for Application Processors
-or the `Zve32f` Vector Extension for Embedded Processors.
+The BF16 extensions defined in this specification (i.e., `Zfbfmin`,
+`Zvfbfmin`, and `Zvfbfwma`) depend on the single-precision floating-point extension
+`F`. Furthermore, the vector BF16 extensions (i.e.,`Zvfbfmin`, and
+`Zvfbfwma`) depend on the `"V"` Vector Extension for Application
+Processors or the `Zve32f` Vector Extension for Embedded Processors.
 
-This initial set of BF16 extensions provides very basic functionality including scalar and vector conversion between BF16 and single-precision values, and vector widening multiply-accumulate instructions.
+This initial set of BF16 extensions provides very basic functionality
+including  scalar and vector conversion between BF16 and
+single-precision values, and vector widening multiply-accumulate
+instructions.
 
 
 include::riscv-bfloat16-zfbfmin.adoc[]
