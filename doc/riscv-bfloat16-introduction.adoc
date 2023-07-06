@@ -4,12 +4,12 @@
 When FP16 (officially called binary16) was first introduced by the IEEE-754 standard,
 it was just an interchange format. It was intended as a space/bandwidth efficient
 encoding that would be used to transfer information. This is in line with the Zfhmin
-proposed extension.
+extension.
 
 However, there were some applications (notably graphics) that found that the smaller
 precision and dynamic range was sufficient for their space. So, FP16 started to see
-some widespread adoption as an arithmetic format. This is in line with the Zfh
-proposed extension.
+some widespread adoption as an arithmetic format. This is in line with
+the Zfh extension.
 
 While it was not the intention of '754 to have FP16 be an arithmetic format, it is
 supported by the standard. Even though the '754 committee recognized that FP16 was
