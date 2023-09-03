@@ -40,9 +40,9 @@ on some inputs for the RNE and RMM rounding modes.
 
 Likewise, exact conversions from BF16 to larger precisions can be synthesized by first
 converting to FP32 and then converting from FP32 to the target precision. Conversions
-from larger precisions coud be synthesized by first converting to FP32 and then
+from larger precisions could be synthesized by first converting to FP32 and then
 converting from FP32 to BF16. As with the arithmetic instructions described above,
-this method of converting values to BF16 can be off by by 1-ulp 
+this method of converting values to BF16 can be off by 1-ulp 
 on some inputs for the RNE and RMM rounding modes.
 ====
 
