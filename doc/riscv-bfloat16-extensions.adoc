@@ -18,6 +18,8 @@ The BF16 extensions defined in this specification (i.e., `Zfbfmin`,
 `F`. Furthermore, the vector BF16 extensions (i.e.,`Zvfbfmin`, and
 `Zvfbfwma`) depend on the `"V"` Vector Extension for Application
 Processors or the `Zve32f` Vector Extension for Embedded Processors.
+Finally there exist dependencies between the newly defined extensions:
+`Zvfbfmin` depends on `Zfbfmin` and `Zvfbfwma` depends on `Zvfbfmin`.
 
 This initial set of BF16 extensions provides very basic functionality
 including  scalar and vector conversion between BF16 and
