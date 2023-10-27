@@ -6,9 +6,11 @@
 This document describes the BF16 format and instruction extensions to the 
 RISC-V Instruction Set Architecture.
 
-This document is in the link:http://riscv.org/spec-state[Stable State].
-Only limited changes may occur.
-For more information, see link:http://riscv.org/spec-state[here].
+[WARNING]
+.This document is in the link:http://riscv.org/spec-state[Frozen] State
+====
+Change is extremely unlikely. A high threshold will be used, and a change will only occur because of some truly critical issue being identified during the public review cycle. Any other desired or needed changes can be the subject of a follow-on new extension.
+====
 
 [NOTE]
 .Copyright and licensure:
