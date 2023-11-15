@@ -35,7 +35,7 @@ Experts working in machine learning at Google who continued to work with FP32 va
 noted that the least significant 16 bits of their significands were not always needed
 for good results, even in training. They proposed a truncated version of FP32, which was
 the 16 most significant bits of the FP32 encoding. This format was named BFloat16
-(or BFloat16). The B in BF16, stands for Brain. Not only did they find that the number of
+(or BF16). The B in BF16, stands for Brain. Not only did they find that the number of
 significant bits in BF16 tended to be sufficient for their work (despite being fewer than
 in FP16), but it was very easy for them to reuse their existing data; FP32 numbers could
 be readily rounded to BF16 with a minimal amount of work. Furthermore, the even smaller
