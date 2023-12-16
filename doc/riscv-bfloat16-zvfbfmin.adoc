@@ -5,7 +5,7 @@ This extension provides the minimal set of instructions needed to enable vector 
 format. It enables BF16 as an interchange format as it provides conversion between BF16 values
 and FP32 values.
 
-This extension requires the `Zfbfmin` extension and either the
+This extension requires either the
 "V" extension or the `Zve32f` embedded vector extension.
 
 [NOTE]
@@ -14,15 +14,15 @@ While conversion instructions tend to include all supported formats, in these ex
 only support conversion between BF16 and FP32 as we are targeting a special use case.
 These extensions are intended to support the case where BF16 values are used as reduced
 precision versions of FP32 values, where use of BF16 provides a two-fold advantage for
-storage, bandwidth, and computation. In this use case, the BF16 values are typcially 
+storage, bandwidth, and computation. In this use case, the BF16 values are typically 
 multiplied by each other and accumulated into FP32 sums. 
-These sums are typcially converted to BF16
+These sums are typically converted to BF16
 and then used as subsequent inputs. The operations on the BF16 values can be performed
-on the CPU or a loosly coupled coprocessor.
+on the CPU or a loosely coupled coprocessor.
 
 Subsequent extensions might provide support for native BF16 arithmetic. Such extensions
 could add additional conversion
-instructions to allow all suported formats to be converted to and from BF16.  
+instructions to allow all supported formats to be converted to and from BF16.  
 ====
 
 [NOTE]
@@ -35,7 +35,7 @@ on some inputs for the RNE and RMM rounding modes.
 
 Likewise, exact conversions from BF16 to larger precisions can be synthesized by first
 converting to FP32 and then converting from FP32 to the target precision. Conversions
-from larger precisions coud be synthesized by first converting to FP32 and then
+from larger precisions could be synthesized by first converting to FP32 and then
 converting from FP32 to BF16. As with the arithmetic instructions described above,
 this method of converting values to BF16 can be off by by 1-ulp 
 on some inputs for the RNE and RMM rounding modes.
