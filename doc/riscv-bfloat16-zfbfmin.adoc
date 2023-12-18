@@ -28,16 +28,22 @@ instructions to allow all supported formats to be converted to and from BF16.
 
 [NOTE]
 ====
-BF16 arithmetic operations can be
+BF16 addition, subtraction, multiplication, division, and square-root operations can be
 faithfully emulated by converting the BF16 operands to single-precision, performing the
 operation using single-precision arithmetic, and then converting back to BF16. Performing
 BF16 fused multiply-addition using this method can produce results that differ by 1-ulp 
 on some inputs for the RNE and RMM rounding modes.
 
-Likewise, exact conversions from BF16 to larger precisions can be synthesized by first
-converting to FP32 and then converting from FP32 to the target precision. Conversions
-from larger precisions could be synthesized by first converting to FP32 and then
-converting from FP32 to BF16. As with the arithmetic instructions described above,
+
+Conversions between BF16 and formats larger than FP32 can be
+emulated.
+Exact widening conversions from BF16 can be synthesized by first
+converting to FP32 and then converting from FP32 to the target
+precision. 
+Conversions narrowing to BF16 can be synthesized by first
+converting to FP32 through a series of halving step and then
+converting from FP32 to the target precision. 
+As with the fused multiply-addition instruction described above,
 this method of converting values to BF16 can be off by 1-ulp 
 on some inputs for the RNE and RMM rounding modes.
 ====
