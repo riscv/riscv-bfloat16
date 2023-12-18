@@ -43,7 +43,7 @@ Arguments::
 Description:: 
 Narrowing convert from FP32 to BF16. Round according to the _frm_ register. 
 
-This instruction is similar to `vfncvt.f.f.w`` which converts a
+This instruction is similar to `vfncvt.f.f.w` which converts a
 floating-point value in a 2*SEW-width format into an SEW-width format.
 However, here the SEW-width format is limited to BF16.
 
