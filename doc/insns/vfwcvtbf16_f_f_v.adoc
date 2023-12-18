@@ -41,8 +41,8 @@ Description::
 Widening convert from BF16 to FP32. The conversion is exact.
 
 This instruction is similar to `vfwcvt.f.f.v` which converts a
-floating-point value in a narrower format into a wider format.
-However, here the narrower format is limited to BF16.
+floating-point value in an SEW-width format into a 2*SEW-width format.
+However, here the SEW-width format is limited to BF16.
 
 [NOTE]
 ====
