@@ -41,7 +41,7 @@ Exact widening conversions from BF16 can be synthesized by first
 converting to FP32 and then converting from FP32 to the target
 precision. 
 Conversions narrowing to BF16 can be synthesized by first
-converting to FP32 through a series of halving step and then
+converting to FP32 through a series of halving steps and then
 converting from FP32 to the target precision. 
 As with the fused multiply-addition instruction described above,
 this method of converting values to BF16 can be off by 1-ulp 
