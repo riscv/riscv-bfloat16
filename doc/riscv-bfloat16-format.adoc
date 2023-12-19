@@ -77,7 +77,7 @@ Infinities are important for keeping meaningless results from being operated upo
 
 NaN stands for Not a Number. 
 
-There are two types of NaNs: signalling (sNaN) and quiet (qNaN ). No computational
+There are two types of NaNs: signalling (sNaN) and quiet (qNaN). No computational
 instruction will ever produce an sNaN; These are only provided as input data. Operating on an sNaN will cause
 an invalid operation exception. Operating on a Quiet NaN usually does not cause an exception.
 
@@ -110,7 +110,7 @@ are more significant than the operand's most significant bit.
 
 ====  Rounding Modes:
 
-As is the case with other foating-point instructions, 
+As is the case with other floating-point instructions, 
 the BF16 instructions support all 5 RISC-V Floating-point rounding modes.
 These modes can be specified in the `rm` field of scalar instructions
 as well as in the `frm` CSR  
@@ -133,7 +133,7 @@ As with other scalar floating-point instructions, the rounding mode field
 mode specified in the `frm` CSR.
 
 [%autowidth]
-.Aditional encoding for the `rm` field of scalar instructions
+.Additional encoding for the `rm` field of scalar instructions
 [cols = "1,1,1"]
 |===
 |Rounding Mode | Mnemonic | Meaning

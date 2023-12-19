@@ -15,7 +15,7 @@ While conversion instructions tend to include all supported formats, in these ex
 only support conversion between BF16 and FP32 as we are targeting a special use case.
 These extensions are intended to support the case where BF16 values are used as reduced
 precision versions of FP32 values, where use of BF16 provides a two-fold advantage for
-storage, bandwidth, and computation. In this use case, the BF16 values are typcially 
+storage, bandwidth, and computation. In this use case, the BF16 values are typically 
 multiplied by each other and accumulated into FP32 sums. 
 These sums are typically converted to BF16
 and then used as subsequent inputs. The operations on the BF16 values can be performed
