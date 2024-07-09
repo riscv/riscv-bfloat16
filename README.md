@@ -13,10 +13,12 @@ This repository is used to develop standardisation proposals for
 Bfloat16 (Brain Float 16) instruction set extensions for the RISC-V
 architecture.
 
+<!--
 // I don't think this Task Group has a wiki page (or I could not find it)
 // For a general overview of the extension status and ratification progress,
 // please see 
 // [our page on the RISC-V Wiki](https://wiki.riscv.org/x/MVcF).
+-->
 
 - **Note:** See the
    [main](https://github.com/riscv/riscv-bfloat16/tree/main)
